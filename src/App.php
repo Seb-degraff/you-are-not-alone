@@ -48,6 +48,7 @@ class App
                 // Web hook
                 $this->telegram->handle();
                 Request::sendMessage(['chat_id' => '350906840', 'text' => 'Ça marche '] );
+                echo 'hey';
             }
             else {
                 // Handle telegram getUpdates request
