@@ -13,12 +13,17 @@ class App
      */
     public static $instance;
 
-    public $players;
+    public $fetcher;
     public $telegram;
 
     public $pdo;
 
     private $config;
+
+    /**
+     * @var Game
+     */
+    private $current_game;
 
     public function __construct(array $config, $isWebHook)
     {
@@ -39,14 +44,14 @@ class App
             // Enable MySQL
             $this->telegram->enableExternalMySql($this->pdo);
 
-            $this->players = new Players();
+            $this->fetcher = new Fetcher();
 
             $this->telegram->addCommandsPath(__DIR__ . "/Commands/SystemCommands/");
             $this->telegram->addCommandsPath(__DIR__ . "/Commands/");
 
             if ($isWebHook) {
                 // Web hook
-                Request::sendMessage(['chat_id' => '350906840', 'text' => 'Ça marche'] );
+                //Request::sendMessage(['chat_id' => '350906840', 'text' => 'Ça marche'] );
                 $this->telegram->handle();
             }
             else {
@@ -59,7 +64,7 @@ class App
             // log telegram errors
             echo $e->getMessage();
         }
-        $this->players->getAllPlayers();
+        $this->fetcher->getAllPlayersData();
     }
 
     private function initDb($mysql_credentials)
@@ -74,5 +79,58 @@ class App
         $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_WARNING);
 
         return $pdo;
+    }
+
+    public function newTurn()
+    {
+        $this->current_game = $this->fetcher->getCurrentGame();
+
+        $players = $this->fetcher->getAllPlayers();
+
+        $notDeadPlayers = [];
+        $playerNamesList = [];
+
+        foreach ($players as $player) {
+            if ($player->is_dead == 0) {
+                $notDeadPlayers[] = $player;
+                $playerNamesList[] = $player->getDisplayName();
+            }
+        }
+
+        if (count($notDeadPlayers) == 0) {
+            $this->printChat("Tout le monde est mort, fin de la partie.");
+            return;
+        }
+
+        if (count($notDeadPlayers) == 1) {
+            $this->printChat($notDeadPlayers[0]->getDisplayName() . " gagne la partie et le trésor, félicitation!!! bravo!");
+            return;
+        }
+
+        $damnedOneParticipantId = $notDeadPlayers[rand(0, count($notDeadPlayers) - 1)]->participant_id;
+
+        $sql = "UPDATE games SET damned_one_participant_id = $damnedOneParticipantId";
+        $statement2 = $this->pdo->query($sql);
+        $statement2->execute();
+
+
+        foreach ($players as $key => $player) {
+            $userId = $player->user_id;
+
+            $this->fetcher->playerSetActionChosen($player, null);
+
+            Request::sendMessage(['chat_id' => $userId, 'text' => 'Choisissez une personne dont vous voulez voir le futur. ' . join($playerNamesList, ', ') ] );
+
+//                if ($key == $chosenOneIndex) {
+//                    Request::sendMessage(['chat_id' => $userId, 'text' => 'Tu es le chosen one']);
+//                } else if ($key == $damnedOneIndex) {
+//                    Request::sendMessage(['chat_id' => $userId, 'text' => 'Tu es le damned one']);
+//                }
+        }
+    }
+
+    function printChat($text)
+    {
+        Request::sendMessage(['chat_id' => $this->current_game->chat_id, 'text' => $text]);
     }
 }

@@ -53,28 +53,22 @@ class StartGameCommand extends UserCommand
         if (count($participants) < 2) {
             $text = "nous sommes désolés, mais vous n'avez pas assez d'ami :(";
         } else {
-//            shuffle($participants);
+            $app = App::$instance;
 
-//            $chosenOneIndex = 0;
-//            $damnedOneIndex = 1;
+            $st = $app->pdo->query("TRUNCATE games");
+            $st->execute();
 
-            $playerNamesList = App::$instance->players->getAllPlayerNames();
+            $sql = "INSERT INTO games (chat_id) VALUES ($chat_id)";
+            $statement2 = $app->pdo->query($sql);
+            $statement2->execute();
 
-//            print_r($playerNamesList);
-
-
-            foreach ($participants as $key => $participant) {
-                $userId = $participant['user_id'];
-
-                $response = Request::sendMessage(['chat_id' => $userId, 'text' => 'Choisissez une personne dont vous voulez voir le futur. ' . join($playerNamesList, ', ') ] );
-
-//                if ($key == $chosenOneIndex) {
-//                    Request::sendMessage(['chat_id' => $userId, 'text' => 'Tu es le chosen one']);
-//                } else if ($key == $damnedOneIndex) {
-//                    Request::sendMessage(['chat_id' => $userId, 'text' => 'Tu es le damned one']);
-//                }
+            $players = $app->fetcher->getAllPlayers();
+            foreach ($players as $player) {
+                $app->fetcher->playerSetIsDead($player, 0);
             }
 
+
+            $app->newTurn();
 
             $text = "Bienvenue Aventuriers ! Vous êtes ici pour trouver gloire et fortune, n’est-ce pas ? Eh bien, sachez que ce donjon est rempli d’obstacles et de créatures atroces ! Vous êtes des explorateurs aguerris, et vous n’aurez pas trop de difficulté à déjouer les nombreux pièges devant vous. Mais attention à ne pas être trop confiants ! À chaque épreuve, l’un de vous quatre a une chance de mourir, et il ne restera qu’un heureux explorateur à la fin de cette quête ! Mouahahahahaha !";
         }

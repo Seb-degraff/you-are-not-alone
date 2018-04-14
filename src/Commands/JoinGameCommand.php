@@ -1,6 +1,7 @@
 <?php
 
 namespace Longman\TelegramBot\Commands\UserCommands;
+use App\App;
 use Longman\TelegramBot\Commands\UserCommand;
 use Longman\TelegramBot\Request;
 
@@ -44,7 +45,8 @@ class JoinGameCommand extends UserCommand
 //            $text = 'Command usage: ' . $this->getUsage();
 //        }
 
-        $pdo = $this->telegram->pdo;
+        $app = App::$instance;
+        $pdo = $app->pdo;
 
         $userId = $user->getId();
 
