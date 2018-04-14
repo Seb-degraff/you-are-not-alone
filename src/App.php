@@ -3,6 +3,7 @@
 namespace App;
 
 use Longman\TelegramBot\Exception\TelegramException;
+use Longman\TelegramBot\Request;
 use Longman\TelegramBot\Telegram;
 
 class App
@@ -19,14 +20,14 @@ class App
 
     private $config;
 
-    public function __construct(array $config)
+    public function __construct(array $config, $isWebHook)
     {
         static::$instance = $this;
 
         $this->config = $config;
 
-        $bot_api_key  = '585514040:AAG3Kaug44Db4Or9KFbY_dkoAs_mfwe5TNU';
-        $bot_username = 'youarenotalone';
+        $bot_api_key  = $config['bot_api_key'];
+        $bot_username = $config['bot_username'];
         $mysql_credentials = $config['db_credentials'];
 
         try {
@@ -43,10 +44,15 @@ class App
             $this->telegram->addCommandsPath(__DIR__ . "/Commands/SystemCommands/");
             $this->telegram->addCommandsPath(__DIR__ . "/Commands/");
 
-            // Handle telegram getUpdates request
-            $response = $this->telegram->handleGetUpdates();
-
-//            print_r($response);
+            if ($isWebHook) {
+                // Web hook
+                $this->telegram->handle();
+                Request::sendMessage(['chat_id' => '350906840', 'text' => 'Ça marche '] );
+            }
+            else {
+                // Handle telegram getUpdates request
+                $this->telegram->handleGetUpdates();
+            }
 
             //$messages = $response->getRawData()['result'];
         } catch (TelegramException $e) {
