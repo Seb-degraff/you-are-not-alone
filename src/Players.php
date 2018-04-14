@@ -18,7 +18,7 @@ class Players
         $names = [];
 
         foreach ($players as $player) {
-            $names[] = $player['username'] ?? $player['first_name'];
+            $names[] = isset($player['username']) ? $player['username'] : $player['first_name'];
         }
 
         return $names;

@@ -45,9 +45,7 @@ class StartGameCommand extends UserCommand
 //            $text = 'Command usage: ' . $this->getUsage();
 //        }
 
-        $pdo = $this->telegram->pdo;
-
-        $userId = $user->getId();
+        $pdo = App::$instance->pdo;
 
         $statement = $pdo->query("SELECT * FROM game_participants");
         $participants = $statement->fetchAll();

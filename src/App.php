@@ -33,10 +33,10 @@ class App
             // Create Telegram API object
             $this->telegram = new Telegram($bot_api_key, $bot_username);
 
-            // Enable MySQL
-            $this->telegram->enableMySql($mysql_credentials);
+            $this->pdo = $this->initDb($mysql_credentials);
 
-            $this->pdo = $this->telegram->pdo;
+            // Enable MySQL
+            $this->telegram->enableExternalMySql($this->pdo);
 
             $this->players = new Players();
 
@@ -54,5 +54,19 @@ class App
             echo $e->getMessage();
         }
         $this->players->getAllPlayers();
+    }
+
+    private function initDb($mysql_credentials)
+    {
+        $dsn     = 'mysql:host=' . $mysql_credentials['host'] . ';dbname=' . $mysql_credentials['database'];
+
+        $options = [
+            //\PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES ' . $encoding
+        ];
+
+        $pdo = new \PDO($dsn, $mysql_credentials['user'], $mysql_credentials['password'], $options);
+        $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_WARNING);
+
+        return $pdo;
     }
 }
