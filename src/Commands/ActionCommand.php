@@ -71,7 +71,7 @@ class ActionCommand extends UserCommand
         $everybodyChoosed = true;
         foreach ($players as $player2)
         {
-            if ($player2->action_chosen === null) {
+            if ($player2->action_chosen === null && !$player2->is_dead) {
                 $everybodyChoosed = false;
             }
         }
