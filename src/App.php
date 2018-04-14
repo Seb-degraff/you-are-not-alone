@@ -87,23 +87,17 @@ class App
 
         $players = $this->fetcher->getAllPlayers();
 
-        $notDeadPlayers = [];
-        $playerNamesList = [];
-
-        foreach ($players as $player) {
-            if ($player->is_dead == 0) {
-                $notDeadPlayers[] = $player;
-                $playerNamesList[] = $player->getDisplayName();
-            }
-        }
+        $notDeadPlayers = $this->getNotDeadPlayers($players);
 
         if (count($notDeadPlayers) == 0) {
-            $this->printChat("Tout le monde est mort, fin de la partie.");
+            $this->printGameChat("Tout le monde est mort, fin de la partie.");
+            $this->endGame();
             return;
         }
 
         if (count($notDeadPlayers) == 1) {
-            $this->printChat($notDeadPlayers[0]->getDisplayName() . " gagne la partie et le trésor, félicitation!!! bravo!");
+            $this->printGameChat($notDeadPlayers[0]->getDisplayName() . " gagne la partie et le trésor, félicitation!!! bravo!");
+            $this->endGame();
             return;
         }
 
@@ -118,8 +112,20 @@ class App
             $userId = $player->user_id;
 
             $this->fetcher->playerSetActionChosen($player, null);
+            $this->fetcher->playerSetHasDoneVision($player, false);
 
-            Request::sendMessage(['chat_id' => $userId, 'text' => 'Choisissez une personne dont vous voulez voir le futur. ' . join($playerNamesList, ', ') ] );
+            if (count($notDeadPlayers) == 2) {
+                $this->printGameChat("Vous n'est plus que deux joueurs, vous ne pouvez plus faire de voyance. Seuls les fantômes ou la chance pourra vous venir en aide.");
+                return;
+            }
+
+            $playerNamesList = [];
+
+            foreach ($notDeadPlayers as $player) {
+                $playerNamesList[] = $player->getDisplayName();
+            }
+
+            Request::sendMessage(['chat_id' => $userId, 'text' => 'Choisissez une personne dont vous voulez voir le futur (/vision + nom). ' . join($playerNamesList, ', ') ] );
 
 //                if ($key == $chosenOneIndex) {
 //                    Request::sendMessage(['chat_id' => $userId, 'text' => 'Tu es le chosen one']);
@@ -129,8 +135,43 @@ class App
         }
     }
 
-    function printChat($text)
+    public function endGame()
+    {
+        $st = $this->pdo->query("TRUNCATE games");
+        $st->execute();
+    }
+
+    public function removePlayer(Player $player)
+    {
+        $this->fetcher->removeGameParticipant($player);
+    }
+
+    public function getNotDeadPlayers($players)
+    {
+        foreach ($players as $player) {
+            if ($player->is_dead == 0) {
+                $notDeadPlayers[] = $player;
+            }
+        }
+
+        return $notDeadPlayers;
+    }
+
+    public function printGameChat($text)
     {
         Request::sendMessage(['chat_id' => $this->current_game->chat_id, 'text' => $text]);
+    }
+
+    public function printChat($chat_id, $text)
+    {
+        Request::sendMessage(['chat_id' => $chat_id, 'text' => $text]);
+    }
+
+    /**
+     * @return bool
+     */
+    public function checkGameIsStarted()
+    {
+        return $this->fetcher->getCurrentGame() != null;
     }
 }

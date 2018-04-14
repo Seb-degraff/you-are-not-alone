@@ -6,7 +6,7 @@ class Fetcher
 {
 
     /**
-     * @return Game
+     * @return Game|null
      */
     public function getCurrentGame()
     {
@@ -59,7 +59,7 @@ class Fetcher
      */
     public function getAllPlayers()
     {
-        $statement = App::$instance->pdo->query("SELECT game_participants.id as participant_id, user_id, first_name, last_name, username, action_chosen, is_dead FROM game_participants JOIN user ON game_participants.user_id = user.id");
+        $statement = App::$instance->pdo->query("SELECT game_participants.id as participant_id, user_id, first_name, last_name, username, action_chosen, has_done_vision, is_dead FROM game_participants JOIN user ON game_participants.user_id = user.id");
         $statement->setFetchMode(\PDO::FETCH_CLASS, Player::class);
         $players = $statement->fetchAll();
 
@@ -103,5 +103,23 @@ class Fetcher
         $player->is_dead = $isDead;
         $statement = App::$instance->pdo->query("UPDATE game_participants SET is_dead = $isDead WHERE game_participants.id = {$player->participant_id}");
         $statement->execute();
+    }
+
+    public function removeGameParticipant(Player $player)
+    {
+        $statement = App::$instance->pdo->prepare("DELETE FROM game_participants WHERE game_participants.id = {$player->participant_id}");
+        $statement->execute();
+    }
+
+    /**
+     * @param Player $player
+     * @param int|bool $hasDoneVision
+     */
+    public function playerSetHasDoneVision($player, $hasDoneVision)
+    {
+        $hasDoneVision = (int) $hasDoneVision;
+
+        $statement = App::$instance->pdo->prepare("UPDATE game_participants SET has_done_vision = :has_done_vision WHERE game_participants.id = {$player->participant_id}");
+        $statement->execute([':has_done_vision' => $hasDoneVision]);
     }
 }

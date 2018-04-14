@@ -10,6 +10,7 @@ class Player
     public $last_name;
     public $username;
     public $action_chosen;
+    public $has_done_vision;
     public $is_dead;
 
     public function getDisplayName()

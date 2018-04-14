@@ -44,9 +44,29 @@ class VisionCommand extends UserCommand
         $input = trim($message->getText(true));
 
         $app = App::$instance;
+
+        if (!$app->checkGameIsStarted()) {
+            $app->printChat($chat_id, "Le jeu n'a pas encore commencé. (/startGame)");
+            return;
+        }
+
         $players = $app->fetcher->getAllPlayers();
 
         $text = "je n'ai pas compris";
+
+        $notDeadPlayers = $app->getNotDeadPlayers($players);
+
+        if (count($notDeadPlayers) == 2) {
+            Request::sendMessage(['chat_id' => $chat_id, 'text' => 'Souvenez-vous, vous ne pouvez plus faire de vision. Bonne chance']);
+            return;
+        }
+
+        $currentPlayer = $app->fetcher->getPlayerByTelegramId($user->getId());
+
+        if ($currentPlayer->has_done_vision == 1) {
+            Request::sendMessage(['chat_id' => $chat_id, 'text' => 'Vous avez déjà assez vu le futur pour ce tour.']);
+            return;
+        }
 
         $mustChooseAction = false;
 
@@ -66,13 +86,15 @@ class VisionCommand extends UserCommand
                     $text = "{$player->getDisplayName()} est en sécurité";
                 }
 
+                $app->fetcher->playerSetHasDoneVision($currentPlayer, true);
+
                 $mustChooseAction = true;
             }
         }
 
         if ($mustChooseAction) {
             $text .= "\n";
-            $text .= "Que voulez vous faire? (/chooseAction)";
+            $text .= "Que voulez vous faire? (/action + 0 ou 1)";
         }
 
         $data = [

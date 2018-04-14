@@ -45,18 +45,24 @@ class StartGameCommand extends UserCommand
 //            $text = 'Command usage: ' . $this->getUsage();
 //        }
 
+        $app = App::$instance;
+
+        if ($app->checkGameIsStarted()) {
+            $app->printChat($chat_id, "Le jeu à déjà commencé. ( /endGame )");
+            return;
+        }
+
         $pdo = App::$instance->pdo;
 
         $statement = $pdo->query("SELECT * FROM game_participants");
         $participants = $statement->fetchAll();
 
         if (count($participants) < 2) {
-            $text = "nous sommes désolés, mais vous n'avez pas assez d'ami :(";
+            $app->printChat($chat_id, "nous sommes désolés, mais vous n'avez pas assez d'ami :(");
         } else {
             $app = App::$instance;
 
-            $st = $app->pdo->query("TRUNCATE games");
-            $st->execute();
+            $app->endGame();
 
             $sql = "INSERT INTO games (chat_id) VALUES ($chat_id)";
             $statement2 = $app->pdo->query($sql);
@@ -67,17 +73,10 @@ class StartGameCommand extends UserCommand
                 $app->fetcher->playerSetIsDead($player, 0);
             }
 
-
-            $app->newTurn();
-
             $text = "Bienvenue Aventuriers ! Vous êtes ici pour trouver gloire et fortune, n’est-ce pas ? Eh bien, sachez que ce donjon est rempli d’obstacles et de créatures atroces ! Vous êtes des explorateurs aguerris, et vous n’aurez pas trop de difficulté à déjouer les nombreux pièges devant vous. Mais attention à ne pas être trop confiants ! À chaque épreuve, l’un de vous quatre a une chance de mourir, et il ne restera qu’un heureux explorateur à la fin de cette quête ! Mouahahahahaha !";
+
+            $app->printChat($chat_id, $text);
+            $app->newTurn();
         }
-
-        $data = [
-            'chat_id' => $chat_id,
-            'text'    => $text,
-        ];
-
-        return Request::sendMessage($data);
     }
 }

@@ -41,10 +41,6 @@ class JoinGameCommand extends UserCommand
 
         $chat_id = $message->getChat()->getId();
 
-//        if ($text === '') {
-//            $text = 'Command usage: ' . $this->getUsage();
-//        }
-
         $app = App::$instance;
         $pdo = $app->pdo;
 
@@ -57,7 +53,7 @@ class JoinGameCommand extends UserCommand
         if ($alreadyInDb) {
             $text = "Fuck you {$user->getFirstName()}, you're already in the game 🖕";
         } else {
-            $pdo->exec("INSERT INTO game_participants (user_id) VALUES ($userId)");
+            $pdo->exec("INSERT INTO game_participants (user_id, has_done_vision) VALUES ($userId, 0)");
             $text    = "welcome " . $user->getUsername();
         }
 

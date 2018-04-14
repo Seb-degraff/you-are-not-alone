@@ -45,6 +45,11 @@ class ActionCommand extends UserCommand
 
         $app = App::$instance;
 
+        if (!$app->checkGameIsStarted()) {
+            $app->printChat($chat_id, "Le jeu n'a pas encore commencé. (/startGame)");
+            return;
+        }
+
         $currentPlayer = $app->fetcher->getPlayerByTelegramId($user->getId());
 
         $input = trim($message->getText(true));
