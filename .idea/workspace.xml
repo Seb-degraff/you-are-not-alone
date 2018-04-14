@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d3d83e9-131a-482f-96cc-1b87c7ceeeba" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/config.php.dist" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app.php" afterPath="$PROJECT_DIR$/app.php" />
       <change beforePath="$PROJECT_DIR$/src/App.php" afterPath="$PROJECT_DIR$/src/App.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/src/Commands/StartGameCommand.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1512">
-              <caret line="86" column="10" lean-forward="true" selection-start-line="83" selection-start-column="8" selection-end-line="86" selection-end-column="10" />
+              <caret line="86" column="10" lean-forward="false" selection-start-line="83" selection-start-column="8" selection-end-line="86" selection-end-column="10" />
               <folding>
                 <element signature="e#60#72#0#PHP" expanded="true" />
                 <marker date="1523645865708" expanded="true" signature="1112:1143" ph="SELECT * FRO... game_participants" />
@@ -61,32 +62,9 @@
       <file leaf-file-name="StartCommand.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/longman/telegram-bot/src/Commands/SystemCommands/StartCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
+            <state relative-caret-position="444">
               <caret line="37" column="7" lean-forward="false" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DB.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/longman/telegram-bot/src/DB.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="936">
-              <caret line="71" column="29" lean-forward="false" selection-start-line="71" selection-start-column="29" selection-end-line="71" selection-end-column="29" />
-              <folding>
-                <marker date="1523625160387" expanded="true" signature="5080:5141" ph="SELECT `id` ${TB_TELEGRAM_UPDATE}" />
-                <marker date="1523625160387" expanded="true" signature="6271:6356" ph="SELECT * FRO... ${TB_MESSAGE}" />
-                <marker date="1523625160387" expanded="true" signature="10441:10752" ph="INSERT INTO `${TB_USER}`... " />
-                <marker date="1523625160387" expanded="true" signature="10753:11120" ph="UPDATE `is_b... is_bot" />
-                <marker date="1523625160387" expanded="true" signature="13332:13729" ph="UPDATE `type... type" />
-                <marker date="1523625160387" expanded="true" signature="21011:21267" ph="INSERT INTO `${TB_CHOSEN_INLINE_RESULT}`... " />
-                <marker date="1523625160387" expanded="true" signature="23496:23686" ph="SELECT * FRO... ${TB_MESSAGE}" />
-                <marker date="1523625160387" expanded="true" signature="38785:39344" ph="SELECT (SELE... " />
-                <marker date="1523625160387" expanded="true" signature="38810:38912" ph="SELECT COUNT... ${TB_REQUEST_LIMITER}" />
-                <marker date="1523625160387" expanded="true" signature="38953:39169" ph="SELECT COUNT... ${TB_REQUEST_LIMITER}" />
-                <marker date="1523625160387" expanded="true" signature="39206:39323" ph="SELECT COUNT... ${TB_REQUEST_LIMITER}" />
-                <marker date="1523625160387" expanded="true" signature="40414:40619" ph="INSERT INTO `${TB_REQUEST_LIMITER}`... " />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -94,18 +72,18 @@
       <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+            <state relative-caret-position="180">
+              <caret line="10" column="5" lean-forward="false" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="App.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="565">
-              <caret line="43" column="84" lean-forward="false" selection-start-line="43" selection-start-column="84" selection-end-line="43" selection-end-column="84" />
+            <state relative-caret-position="576">
+              <caret line="43" column="69" lean-forward="true" selection-start-line="43" selection-start-column="69" selection-end-line="43" selection-end-column="69" />
               <folding>
                 <element signature="e#23#75#0#PHP" expanded="true" />
               </folding>
@@ -113,25 +91,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GenericMessageCommand.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Commands/SystemCommands/GenericMessageCommand.php">
+      <file leaf-file-name="config.php.dist" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config.php.dist">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="531">
-              <caret line="50" column="11" lean-forward="true" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
-              <folding>
-                <element signature="e#6#244#0#PHP" expanded="true" />
-                <element signature="e#285#332#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="162">
+              <caret line="9" column="2" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/composer.json">
+      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+            <state relative-caret-position="54">
+              <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="19" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GenericMessageCommand.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Commands/SystemCommands/GenericMessageCommand.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="531">
+              <caret line="50" column="11" lean-forward="false" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
+              <folding>
+                <element signature="e#6#244#0#PHP" expanded="true" />
+                <element signature="e#285#332#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -170,12 +158,13 @@
         <option value="$PROJECT_DIR$/vendor/longman/telegram-bot/src/DB.php" />
         <option value="$PROJECT_DIR$/Commands/JoinGameCommand.php" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/app.php" />
         <option value="$PROJECT_DIR$/src/Players.php" />
         <option value="$PROJECT_DIR$/Commands/StartGameCommand.php" />
         <option value="$PROJECT_DIR$/src/Commands/StartGameCommand.php" />
         <option value="$PROJECT_DIR$/src/Commands/SystemCommands/GenericmessageCommand.php" />
         <option value="$PROJECT_DIR$/src/Commands/SystemCommands/GenericMessageCommand.php" />
+        <option value="$PROJECT_DIR$/config.php" />
+        <option value="$PROJECT_DIR$/app.php" />
         <option value="$PROJECT_DIR$/src/App.php" />
       </list>
     </option>
@@ -247,11 +236,6 @@
               <item name="Commands" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="SystemCommands" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="youarenotalone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="youarenotalone" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -272,6 +256,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/Commands/SystemCommands" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/Commands" />
@@ -304,12 +289,12 @@
       <updated>1523617466586</updated>
       <workItem from="1523617467758" duration="3000" />
       <workItem from="1523617484794" duration="15633000" />
-      <workItem from="1523698935422" duration="244000" />
+      <workItem from="1523698935422" duration="1121000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15880000" />
+    <option name="totallyTimeSpent" value="16757000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1680" height="1028" extended-state="0" />
@@ -544,6 +529,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -565,14 +551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/longman/telegram-bot/src/Commands/SystemCommands/StartCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="37" column="7" lean-forward="false" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Commands/JoinGameCommand.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -588,28 +566,10 @@
     <entry file="file://$PROJECT_DIR$/src/Commands/StartGameCommand.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1512">
-          <caret line="86" column="10" lean-forward="true" selection-start-line="83" selection-start-column="8" selection-end-line="86" selection-end-column="10" />
+          <caret line="86" column="10" lean-forward="false" selection-start-line="83" selection-start-column="8" selection-end-line="86" selection-end-column="10" />
           <folding>
             <element signature="e#60#72#0#PHP" expanded="true" />
             <marker date="1523645865708" expanded="true" signature="1112:1143" ph="SELECT * FRO... game_participants" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="565">
-          <caret line="43" column="84" lean-forward="false" selection-start-line="43" selection-start-column="84" selection-end-line="43" selection-end-column="84" />
-          <folding>
-            <element signature="e#23#75#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -628,10 +588,60 @@
     <entry file="file://$PROJECT_DIR$/src/Commands/SystemCommands/GenericMessageCommand.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="531">
-          <caret line="50" column="11" lean-forward="true" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
+          <caret line="50" column="11" lean-forward="false" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
           <folding>
             <element signature="e#6#244#0#PHP" expanded="true" />
             <element signature="e#285#332#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.php.dist">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.php.dist">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="2" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/longman/telegram-bot/src/Commands/SystemCommands/StartCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="37" column="7" lean-forward="false" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="5" lean-forward="false" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="43" column="69" lean-forward="true" selection-start-line="43" selection-start-column="69" selection-end-line="43" selection-end-column="69" />
+          <folding>
+            <element signature="e#23#75#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -17,18 +17,17 @@ class App
 
     public $pdo;
 
-    public function __construct()
+    private $config;
+
+    public function __construct(array $config)
     {
         static::$instance = $this;
 
+        $this->config = $config;
+
         $bot_api_key  = '585514040:AAG3Kaug44Db4Or9KFbY_dkoAs_mfwe5TNU';
         $bot_username = 'youarenotalone';
-        $mysql_credentials = [
-            'host'     => 'localhost',
-            'user'     => 'root',
-            'password' => '',
-            'database' => 'youarenotalone',
-        ];
+        $mysql_credentials = $config['db_credentials'];
 
         try {
             // Create Telegram API object

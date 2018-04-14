@@ -1,0 +1,10 @@
+<?php
+
+return array(
+    'db_credentials' => [
+        'host'     => 'localhost',
+        'user'     => 'root',
+        'password' => '',
+        'database' => 'youarenotalone',
+    ],
+);
