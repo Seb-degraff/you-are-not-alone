@@ -122,4 +122,11 @@ class Fetcher
         $statement = App::$instance->pdo->prepare("UPDATE game_participants SET has_done_vision = :has_done_vision WHERE game_participants.id = {$player->participant_id}");
         $statement->execute([':has_done_vision' => $hasDoneVision]);
     }
+
+    public function setGameCurrentTurn(Game $game, $currentTurn)
+    {
+        $game->current_turn = $currentTurn;
+        $statement = App::$instance->pdo->prepare("UPDATE games SET current_turn = :current_turn WHERE games.id = {$game->id}");
+        $statement->execute([':current_turn' => $currentTurn]);
+    }
 }

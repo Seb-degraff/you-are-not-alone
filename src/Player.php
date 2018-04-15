@@ -17,7 +17,7 @@ class Player
     {
         if ($this->username)
         {
-            return $this->username;
+            return $this->username;// . ($this->is_dead ? ' ☠️' : '');
         }
         return $this->first_name;
     }

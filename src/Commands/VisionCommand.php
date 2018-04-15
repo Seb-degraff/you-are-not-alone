@@ -52,8 +52,6 @@ class VisionCommand extends UserCommand
 
         $players = $app->fetcher->getAllPlayers();
 
-        $text = "je n'ai pas compris";
-
         $notDeadPlayers = $app->getNotDeadPlayers($players);
 
         if (count($notDeadPlayers) == 2) {
@@ -76,32 +74,28 @@ class VisionCommand extends UserCommand
                 $currentGame = $app->fetcher->getCurrentGame();
 
                 if ($player->user_id == $user->getId()) {
-                    $text = "Si vous saviez votre propre avenir vous ne pourriez pas l'accomplir. Choisissez quelqu'un d'autre que vous";
+                    $app->printChat($currentPlayer->user_id, "Si vous saviez votre propre avenir vous ne pourriez pas l'accomplir. Choisissez quelqu'un d'autre que vous"); // TODO changer la phrase
                     break;
                 }
 
+                $currentScenario = $app->getCurrentScenario();
+
                 if ($currentGame->damned_one_participant_id == $player->participant_id) {
-                    $text = "Malheureusement {$player->getDisplayName()} va mourrir si il avance!!";
+                    $app->printChat($currentPlayer->user_id,"{$player->getDisplayName()} va mourrir " . $currentScenario['visionChoice1']);
                 } else {
-                    $text = "{$player->getDisplayName()} est en sécurité";
+                    $app->printChat($currentPlayer->user_id,"Il ne va rien arriver à {$player->getDisplayName()} " . $currentScenario['visionChoice1']);
                 }
 
                 $app->fetcher->playerSetHasDoneVision($currentPlayer, true);
-
                 $mustChooseAction = true;
             }
         }
 
         if ($mustChooseAction) {
-            $text .= "\n";
-            $text .= "Que voulez vous faire? (/action + 0 ou 1)";
+            sleep(1);
+            $app->printChat($currentPlayer->user_id, "Quelle action choisissez vous ? /action + 1 ou 2");
+        } else {
+            $app->printChat($currentPlayer->user_id, "Je n'ai pas compris");
         }
-
-        $data = [
-            'chat_id' => $chat_id,
-            'text'    => $text,
-        ];
-
-        return Request::sendMessage($data);
     }
 }

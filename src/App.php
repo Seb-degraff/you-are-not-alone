@@ -12,6 +12,7 @@ class App
      * @var App
      */
     public static $instance;
+    public $storyContent;
 
     public $fetcher;
     public $telegram;
@@ -19,6 +20,7 @@ class App
     public $pdo;
 
     private $config;
+
 
     /**
      * @var Game
@@ -28,6 +30,8 @@ class App
     public function __construct(array $config, $isWebHook)
     {
         static::$instance = $this;
+
+        $this->storyContent = include (__DIR__ . "/../resources/story_content.php");
 
         $this->config = $config;
 
@@ -81,7 +85,7 @@ class App
         return $pdo;
     }
 
-    public function newTurn()
+    public function nextTurn()
     {
         $this->current_game = $this->fetcher->getCurrentGame();
 
@@ -101,12 +105,46 @@ class App
             return;
         }
 
+        sleep(2);
+
+        $currentTurn = $this->current_game->current_turn;
+        $this->fetcher->setGameCurrentTurn($this->current_game, ++$currentTurn);
+
+        $currentStory = $this->getCurrentScenario();
+
+        $this->printGameChat(strtoupper('*' . $currentStory['title'] . '*'), true);
+        $this->printGameChat($currentStory['story']);
+
+        sleep(2);
+
+        $this->printGameChat('Deux choix se présentent à vous:');
+        sleep(1);
+        $this->printGameChat("*Choix 1:* " . $currentStory['choice0'], true);
+        sleep(1);
+        $this->printGameChat("*Choix 2:* " . $currentStory['choice1'], true);
+
+        sleep(1);
+
+        if (count($notDeadPlayers) == 2) {
+            $this->printGameChat("Vous n'êtes plus que deux joueurs, vous ne pouvez plus faire de voyance. Seuls les fantômes ou la chance pourront vous venir en aide.");
+            return;
+        } else {
+            $this->printGameChat("Mais avant que vous preniez votre décision, je peux effectuer pour vous une vision. Parlez-moi en privé (/vision joueur)");
+        }
+
+        sleep(2);
+
         $damnedOneParticipantId = $notDeadPlayers[rand(0, count($notDeadPlayers) - 1)]->participant_id;
 
         $sql = "UPDATE games SET damned_one_participant_id = $damnedOneParticipantId";
         $statement2 = $this->pdo->query($sql);
         $statement2->execute();
 
+        $playerNamesList = [];
+
+        foreach ($notDeadPlayers as $player) {
+            $playerNamesList[] = $player->getDisplayName();
+        }
 
         foreach ($players as $key => $player) {
             $userId = $player->user_id;
@@ -114,18 +152,8 @@ class App
             $this->fetcher->playerSetActionChosen($player, null);
             $this->fetcher->playerSetHasDoneVision($player, false);
 
-            if (count($notDeadPlayers) == 2) {
-                $this->printGameChat("Vous n'est plus que deux joueurs, vous ne pouvez plus faire de voyance. Seuls les fantômes ou la chance pourra vous venir en aide.");
-                return;
-            }
-
-            $playerNamesList = [];
-
-            foreach ($notDeadPlayers as $player) {
-                $playerNamesList[] = $player->getDisplayName();
-            }
-
-            Request::sendMessage(['chat_id' => $userId, 'text' => 'Choisissez une personne dont vous voulez voir le futur (/vision + nom). ' . join($playerNamesList, ', ') ] );
+            $reponse = $this->printChat($userId, 'Choisissez une personne dont vous voulez voir le futur (/vision + nom). ' . join($playerNamesList, ', '));
+            print_r(['sending stuff to' => $player->getDisplayName(), 'reponse' => $reponse]);
 
 //                if ($key == $chosenOneIndex) {
 //                    Request::sendMessage(['chat_id' => $userId, 'text' => 'Tu es le chosen one']);
@@ -157,14 +185,26 @@ class App
         return $notDeadPlayers;
     }
 
-    public function printGameChat($text)
+    public function printGameChat($text, $markdown = false)
     {
-        Request::sendMessage(['chat_id' => $this->current_game->chat_id, 'text' => $text]);
+        return $this->printChat($this->fetcher->getCurrentGame()->chat_id, $text, $markdown);
     }
 
-    public function printChat($chat_id, $text)
+    public function printChat($chat_id, $text, $markdown = false)
     {
-        Request::sendMessage(['chat_id' => $chat_id, 'text' => $text]);
+        $data['chat_id'] = $chat_id;
+        $data['text'] = $text;
+        if ($markdown)
+            $data['parse_mode'] = 'Markdown';
+
+        $response = Request::sendMessage($data);
+
+        if (!$response->isOk()) {
+            echo "Error when sending $text to $chat_id." . PHP_EOL;
+            print_r($response);
+        }
+
+        return $response;
     }
 
     /**
@@ -173,5 +213,12 @@ class App
     public function checkGameIsStarted()
     {
         return $this->fetcher->getCurrentGame() != null;
+    }
+
+    public function getCurrentScenario()
+    {
+        $game = $this->fetcher->getCurrentGame();
+
+        return $this->storyContent['scenarios'][$game->current_turn];
     }
 }

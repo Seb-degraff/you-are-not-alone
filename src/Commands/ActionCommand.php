@@ -57,10 +57,10 @@ class ActionCommand extends UserCommand
 
         $actionChoice = null;
 
-        if ($input === "0") {
+        if ($input === "1") {
             $actionChoice = 0;
         }
-        if ($input === "1") {
+        if ($input === "2") {
             $actionChoice = 1;
         }
 
@@ -96,8 +96,10 @@ class ActionCommand extends UserCommand
 
             $somebodyIsDead = false;
 
+            $currentScenario = $app->getCurrentScenario();
+
             foreach ($players as $player) {
-                $action = (bool) $player->action_chosen;
+                $action = (int) $player->action_chosen;
                 $damned = $player->participant_id == $game->damned_one_participant_id;
 
                 print_r(['$player->participant_id'  => $player->participant_id, '$game->damned_one_participant_id' => $game->damned_one_participant_id,  'player' => $player->getDisplayName(), 'action' => $action, 'damned' => $damned]);
@@ -106,7 +108,11 @@ class ActionCommand extends UserCommand
                     // meurs
                     $somebodyIsDead = true;
                     $app->fetcher->playerSetIsDead($player, 1);
-                    Request::sendMessage(['chat_id' => $game->chat_id, 'text' => $player->getDisplayName() . " est mort!"]);
+                    print ('accessing ' . 'looseChoice' . $action . PHP_EOL);
+                    $app->printGameChat($player->getDisplayName() . ": " . $currentScenario['looseChoice' . $action]);
+                } else {
+                    print ('accessing ' . 'winChoice' . $action . PHP_EOL);
+                    $app->printGameChat($player->getDisplayName() . ": " . $currentScenario['winChoice' . $action]);
                 }
             }
 
@@ -114,7 +120,7 @@ class ActionCommand extends UserCommand
                 Request::sendMessage(['chat_id' => $game->chat_id, 'text' => "Personne n'est mort! Bande de veinards"]);
             }
 
-            $app->newTurn();
+            $app->nextTurn();
         }
     }
 }
