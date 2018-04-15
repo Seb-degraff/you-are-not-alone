@@ -113,7 +113,8 @@ class App
         $currentStory = $this->getCurrentScenario();
 
         $this->printGameChat(strtoupper('*' . $currentStory['title'] . '*'), true);
-        $this->printGameChat($currentStory['story']);
+
+        $this->printGameChat($currentStory['story'], true, $currentStory['image']);
 
         sleep(2);
 
@@ -185,17 +186,19 @@ class App
         return $notDeadPlayers;
     }
 
-    public function printGameChat($text, $markdown = false)
+    public function printGameChat($text, $markdown = false, $picUrl = null)
     {
-        return $this->printChat($this->fetcher->getCurrentGame()->chat_id, $text, $markdown);
+        return $this->printChat($this->fetcher->getCurrentGame()->chat_id, $text, $markdown, $picUrl);
     }
 
-    public function printChat($chat_id, $text, $markdown = false)
+    public function printChat($chat_id, $text, $markdown = false, $picUrl = null)
     {
         $data['chat_id'] = $chat_id;
         $data['text'] = $text;
         if ($markdown)
             $data['parse_mode'] = 'Markdown';
+        if ($picUrl)
+            $data['photo'] = $picUrl;
 
         $response = Request::sendMessage($data);
 

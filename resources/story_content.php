@@ -16,6 +16,7 @@ return [
             'winChoice0' => "Le pont craque de partout, mais votre délicatesse vous a sauvé ! Vous continuez l’épreuve.",
             'looseChoice1' => "Alors que vous cherchez une autre entrée, un bras de mort-vivant sort de la terre et vous saisit la jambe, avant de vous emporter avec lui dans les abysses !",
             'looseChoice0' => "CRACK ! une des planches du pont-levis se fracture sous vos pieds, et vous tombez dans le vide, avant de vous briser la nuque au sol.",
+            'image' => "http://gold.arrache.ch/public/images/pont_levis.png",
         ],
         [
             'title' => "Les deux chemins",
@@ -28,6 +29,7 @@ return [
             'winChoice0' => "Vous avez été assez silencieux pour ne pas réveiller le dragon. Vous trouvez la prochaine épreuve.",
             'looseChoice1' => "Lorsque que vous avancez dans ce passage qui avait l’air sans danger, vous remarquez que les murs se resserrent sur vous peu à peu. Malgré votre course désespérée, vous mourrez écrasé avec comme dernière vision, la porte de sortie !",
             'looseChoice0' => "Vous faites involontairement du bruit... un cri assourdissant retentit dans le couloir, suivi d’un souffle enflammé. Vous n’êtes plus qu’un vulgaire tas de cendres.",
+            'image' => "http://gold.arrache.ch/public/images/chemins.png",
         ],
         [
             'title' => "Les Gobelins",
@@ -40,6 +42,7 @@ return [
             'winChoice0' => "Votre instinct de survie déclenche une rage incontrôlable. Votre arme s’écrase avec brutalité sur le crâne de vos adversaires, en décimant plus d’un. Les autres créatures sont alors effrayées et refusent de s’attaquer à vous.",
             'looseChoice1' => "Votre défense est inébranlable, mais malheureusement, vous êtes touché par la déviation d’une flèche empoisonnée, dont vous ne connaissez pas l’origine. Vous mourrez sur le coup !",
             'looseChoice0' => "Bien que votre charge soit héroïque, votre sottise vous a fait courir à votre perte. Dans votre course, vous trébuchez et vous vous empalez sur la lance d’un gobelin.",
+            'image' => "http://gold.arrache.ch/public/images/goblins.png",
         ],
         [
             'title' => "L'ombre et la lumière",
@@ -52,6 +55,7 @@ return [
             'winChoice0' => "Qu’avant nous là ? Un spécimen intéressant ! Vous ne suivez aucune voie ni personne. Vous pourriez peut-être m’être utile un jour. Vous méritez que je vous garde en vie. » Des ombres vous entoure, vous procurant détermination et combativité, puis vous transfèrent vers la dernière épreuve.",
             'looseChoice1' => "Une voix sévère résonne avec force dans votre tête : « REPENTEZ VOUS ! Vous n’êtes pas digne ! Subissez le courroux céleste ! Nous allons vous purifier par le feu ! » Votre peau se désintègre et vous apercevez vos muscles, mais lorsque la vie vous quitte, vous ressentez une agréable sensation. Vous êtes mort, mais libéré de vos péchés.",
             'looseChoice0' => "un chuchotement méprisant atteint votre oreille : « Votre courage me répugne ! Vous n’êtes qu’un pantin des dieux. Je dois malheureusement vous supprimer. » Des ombres s’emparent de votre corps et vous immobilisent, avant de vous comprimer jusqu’à vous faire disparaitre dans le néant distordu.",
+            'image' => "http://gold.arrache.ch/public/images/portails.png",
         ],
         [
             'title' => "Vous n'y toucherez pas",
@@ -64,6 +68,7 @@ return [
             'winChoice0' => "Alors que le mage s’occupe des autres aventuriers, vous avez perdu tout espoir dans cette quête. D’un pas nonchalant, vous arrivez devant la pâtisserie, votre dernière volonté. Juste avant de le savourer, le sorcier vous interpelle d’une voix suppliante : « NOOOOON !!! Je vous interdit de toucher à ça ! C’est mon dernier Cupcake à la double crème, orné d’éclats chocolatés ! En plus, c’est mon dernier ! Prenez ce que vous voulez et PARTEZ ! Mais ne le touchez pas s’il vous plaît ! » Vos yeux s’illuminent : vous menacez le maître du jeu avec le cupcake, tout en vous approchant du butin. Vous le saisissez et vous fuyez en laissant le petit gâteau derrière vous.",
             'looseChoice1' => "Alors que vous dégainez votre arme pour démolir une des coupes de sang, le nécromancien vous fixe de son regard ténébreux. Vous n’arrivez plus à le quitter des yeux. Votre âme est aspirée lentement en direction du bâton maléfique que le mage tient dans sa main.",
             'looseChoice0' => "Intrigué par la présence de la confiserie, vous décidez de courir vers cette dernière. Le sorcier vous repère aussitôt. « Espèce de goinfre ! Tout le monde se bat ici, et vous ne pensez qu’à vous empiffrer ! » D’un geste précis de la main, il vous transforme aussitôt en mignon petit porcelet.",
+            'image' => "http://gold.arrache.ch/public/images/butin.png",
         ],
     ]
 ];
