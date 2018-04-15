@@ -40,8 +40,7 @@ class EndGameCommand extends UserCommand
 
         $app = App::$instance;
 
-        $app->endGame();
-
         $app->printChat($chat_id, "le jeu à été stoppé");
+        $app->endGame();
     }
 }

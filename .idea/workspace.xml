@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d3d83e9-131a-482f-96cc-1b87c7ceeeba" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/story_content.php" afterPath="$PROJECT_DIR$/resources/story_content.php" />
-      <change beforePath="$PROJECT_DIR$/src/App.php" afterPath="$PROJECT_DIR$/src/App.php" />
-      <change beforePath="$PROJECT_DIR$/src/Commands/ActionCommand.php" afterPath="$PROJECT_DIR$/src/Commands/ActionCommand.php" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/EndGameCommand.php" afterPath="$PROJECT_DIR$/src/Commands/EndGameCommand.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,8 +49,8 @@
       <file leaf-file-name="EndGameCommand.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Commands/EndGameCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="36" column="39" lean-forward="false" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
+            <state relative-caret-position="738">
+              <caret line="43" column="24" lean-forward="false" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -92,7 +90,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="647">
@@ -106,11 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Fetcher.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Fetcher.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Fetcher.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="93" column="31" lean-forward="false" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="41" />
+            <state relative-caret-position="220">
+              <caret line="61" column="15" lean-forward="true" selection-start-line="61" selection-start-column="15" selection-end-line="61" selection-end-column="15" />
               <folding>
                 <marker date="1523744353739" expanded="true" signature="173:200" ph="SELECT * FRO... games" />
                 <marker date="1523744353739" expanded="true" signature="1124:1324" ph="SELECT * FRO... game_participants" />
@@ -213,7 +211,6 @@
         <option value="$PROJECT_DIR$/src/Commands/ChooseActionCommand.php" />
         <option value="$PROJECT_DIR$/src/Commands/LeaveGameCommand.php" />
         <option value="$PROJECT_DIR$/src/Commands/StopGameCommand.php" />
-        <option value="$PROJECT_DIR$/src/Commands/EndGameCommand.php" />
         <option value="$PROJECT_DIR$/src/Commands/KickCommand.php" />
         <option value="$PROJECT_DIR$/src/Commands/StartGameCommand.php" />
         <option value="$PROJECT_DIR$/src/Game.php" />
@@ -224,6 +221,7 @@
         <option value="$PROJECT_DIR$/resources/story_content.php" />
         <option value="$PROJECT_DIR$/src/Commands/ActionCommand.php" />
         <option value="$PROJECT_DIR$/src/App.php" />
+        <option value="$PROJECT_DIR$/src/Commands/EndGameCommand.php" />
       </list>
     </option>
   </component>
@@ -307,7 +305,7 @@
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="nextt&#9;null&#9;null&#10;action&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/ActionCommand.php&#10;fetcher&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Fetcher.php&#10;nexttur&#9;null&#9;null&#10;app&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/App.php&#10;actionc&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/ActionCommand.php&#10;player&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Player.php&#10;vision&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/VisionCommand.php&#10;visionc&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/VisionCommand.php&#10;newtu&#9;null&#9;null&#10;story&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/resources/story_content.php&#10;st&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/resources/story_content.php&#10;visionco&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/VisionCommand.php&#10;fet&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Fetcher.php&#10;game&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Game.php&#10;startg&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;newtur&#9;null&#9;null&#10;ki&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/KickCommand.php&#10;vis&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/VisionCommand.php&#10;play&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Player.php&#10;fe&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Fetcher.php&#10;start&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;join&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/JoinGameCommand.php&#10;star&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;leav&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/LeaveGameCommand.php&#10;lea&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/LeaveGameCommand.php&#10;leave&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/LeaveGameCommand.php&#10;fetch&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Fetcher.php&#10;Actionc&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/ActionCommand.php&#10;ac&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/ActionCommand.php&#10;chooseplaye&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/ChoosePlayerCommand.php&#10;choos&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/ChooseActionCommand.php&#10;StartGam&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;pl&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Player.php&#10;choosea&#9;null&#9;null&#10;ch&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/ChooseActionCommand.php&#10;web_h&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/web_hook.php&#10;partici&#9;null&#9;null&#10;players&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Players.php&#10;startc&#9;null&#9;null&#10;joingame&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/JoinGameCommand.php&#10;joingamecon&#9;null&#9;null&#10;startgae&#9;null&#9;null&#10;echoc&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/EchoCommand.php&#10;command&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/vendor/longman/telegram-bot/src/Commands/SystemCommands/StartCommand.php&#10;con&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/config.php.dist&#10;config&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/config.php&#10;conf&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/config.php.dist&#10;startgame&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;startcomm&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="fetcher&#9;null&#9;null&#10;endgame&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/EndGameCommand.php&#10;nextt&#9;null&#9;null&#10;action&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/ActionCommand.php&#10;nexttur&#9;null&#9;null&#10;app&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/App.php&#10;actionc&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/ActionCommand.php&#10;player&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Player.php&#10;vision&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/VisionCommand.php&#10;visionc&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/VisionCommand.php&#10;newtu&#9;null&#9;null&#10;story&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/resources/story_content.php&#10;st&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/resources/story_content.php&#10;visionco&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/VisionCommand.php&#10;fet&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Fetcher.php&#10;game&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Game.php&#10;startg&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;newtur&#9;null&#9;null&#10;ki&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/KickCommand.php&#10;vis&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/VisionCommand.php&#10;play&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Player.php&#10;fe&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Fetcher.php&#10;start&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;join&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/JoinGameCommand.php&#10;star&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;leav&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/LeaveGameCommand.php&#10;lea&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/LeaveGameCommand.php&#10;leave&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/LeaveGameCommand.php&#10;fetch&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Fetcher.php&#10;Actionc&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/ActionCommand.php&#10;ac&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/ActionCommand.php&#10;chooseplaye&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/ChoosePlayerCommand.php&#10;choos&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/ChooseActionCommand.php&#10;StartGam&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;pl&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Player.php&#10;choosea&#9;null&#9;null&#10;ch&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/ChooseActionCommand.php&#10;web_h&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/web_hook.php&#10;partici&#9;null&#9;null&#10;players&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Players.php&#10;startc&#9;null&#9;null&#10;joingame&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/JoinGameCommand.php&#10;joingamecon&#9;null&#9;null&#10;startgae&#9;null&#9;null&#10;echoc&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/EchoCommand.php&#10;command&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/vendor/longman/telegram-bot/src/Commands/SystemCommands/StartCommand.php&#10;con&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/config.php.dist&#10;config&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/config.php&#10;conf&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/config.php.dist&#10;startgame&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
@@ -360,12 +358,12 @@
       <workItem from="1523748630858" duration="412000" />
       <workItem from="1523749057693" duration="4832000" />
       <workItem from="1523754998215" duration="25000" />
-      <workItem from="1523785824039" duration="4095000" />
+      <workItem from="1523785824039" duration="4259000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57181000" />
+    <option name="totallyTimeSpent" value="57345000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1680" height="1028" extended-state="6" />
@@ -768,37 +766,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Fetcher.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="93" column="31" lean-forward="false" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="41" />
-          <folding>
-            <marker date="1523744353739" expanded="true" signature="173:200" ph="SELECT * FRO... games" />
-            <marker date="1523744353739" expanded="true" signature="1124:1324" ph="SELECT * FRO... game_participants" />
-            <marker date="1523744353739" expanded="true" signature="1568:1648" ph="SELECT * FRO... game_participants" />
-            <marker date="1523744353739" expanded="true" signature="2250:2295" ph="UPDATE game_participants... " />
-            <marker date="1523744353739" expanded="true" signature="2250:2329" ph="UPDATE game_participants... " />
-            <marker date="1523744353739" expanded="true" signature="2250:2331" ph="UPDATE game_participants... " />
-            <marker date="1523744353739" expanded="true" signature="2250:2332" ph="UPDATE game_participants... " />
-            <marker date="1523744353739" expanded="true" signature="2256:2295" ph="SELECT game_... game_participants" />
-            <marker date="1523744353739" expanded="true" signature="2573:2649" ph="UPDATE game_participants... " />
-            <marker date="1523744353739" expanded="true" signature="2831:2890" ph="DELETE FROM game_participants... " />
-            <marker date="1523744353739" expanded="true" signature="2843:2890" ph="UPDATE game_participants... " />
-            <marker date="1523744353739" expanded="true" signature="3213:3306" ph="UPDATE game_participants... " />
-            <marker date="1523744353739" expanded="true" signature="3577:3640" ph="UPDATE game... " />
-            <marker date="1523744353739" expanded="true" signature="3577:3651" ph="UPDATE game... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Commands/EndGameCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="39" lean-forward="false" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Commands/StartGameCommand.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="870">
@@ -859,6 +826,37 @@
             <element signature="e#23#75#0#PHP" expanded="true" />
             <marker date="1523791502000" expanded="true" signature="4898:4966" ph="UPDATE games... " />
             <marker date="1523791502000" expanded="true" signature="4904:4966" ph="INSERT INTO games... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Commands/EndGameCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="738">
+          <caret line="43" column="24" lean-forward="false" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Fetcher.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="61" column="15" lean-forward="true" selection-start-line="61" selection-start-column="15" selection-end-line="61" selection-end-column="15" />
+          <folding>
+            <marker date="1523744353739" expanded="true" signature="173:200" ph="SELECT * FRO... games" />
+            <marker date="1523744353739" expanded="true" signature="1124:1324" ph="SELECT * FRO... game_participants" />
+            <marker date="1523744353739" expanded="true" signature="1568:1648" ph="SELECT * FRO... game_participants" />
+            <marker date="1523744353739" expanded="true" signature="2250:2295" ph="UPDATE game_participants... " />
+            <marker date="1523744353739" expanded="true" signature="2250:2329" ph="UPDATE game_participants... " />
+            <marker date="1523744353739" expanded="true" signature="2250:2331" ph="UPDATE game_participants... " />
+            <marker date="1523744353739" expanded="true" signature="2250:2332" ph="UPDATE game_participants... " />
+            <marker date="1523744353739" expanded="true" signature="2256:2295" ph="SELECT game_... game_participants" />
+            <marker date="1523744353739" expanded="true" signature="2573:2649" ph="UPDATE game_participants... " />
+            <marker date="1523744353739" expanded="true" signature="2831:2890" ph="DELETE FROM game_participants... " />
+            <marker date="1523744353739" expanded="true" signature="2843:2890" ph="UPDATE game_participants... " />
+            <marker date="1523744353739" expanded="true" signature="3213:3306" ph="UPDATE game_participants... " />
+            <marker date="1523744353739" expanded="true" signature="3577:3640" ph="UPDATE game... " />
+            <marker date="1523744353739" expanded="true" signature="3577:3651" ph="UPDATE game... " />
           </folding>
         </state>
       </provider>
