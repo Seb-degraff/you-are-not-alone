@@ -70,5 +70,5 @@ return [
             'looseChoice0' => "Intrigué par la présence de la confiserie, vous décidez de courir vers cette dernière. Le sorcier vous repère aussitôt. « Espèce de goinfre ! Tout le monde se bat ici, et vous ne pensez qu’à vous empiffrer ! » D’un geste précis de la main, il vous transforme aussitôt en mignon petit porcelet.",
             'image' => "http://gold.arrache.ch/public/images/butin.png",
         ],
-    ]
+    ],
 ];

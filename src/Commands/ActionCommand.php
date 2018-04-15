@@ -52,6 +52,11 @@ class ActionCommand extends UserCommand
 
         $currentPlayer = $app->fetcher->getPlayerByTelegramId($user->getId());
 
+        if (!$currentPlayer) {
+            $app->printChat($chat_id, "Vous ne faites pas partie du jeu pour le moment.");
+            return;
+        }
+
         $input = trim($message->getText(true));
 
 
@@ -99,26 +104,25 @@ class ActionCommand extends UserCommand
             $currentScenario = $app->getCurrentScenario();
 
             foreach ($players as $player) {
+                if ($player->is_dead)
+                    continue;
+
                 $action = (int) $player->action_chosen;
                 $damned = $player->participant_id == $game->damned_one_participant_id;
 
-                print_r(['$player->participant_id'  => $player->participant_id, '$game->damned_one_participant_id' => $game->damned_one_participant_id,  'player' => $player->getDisplayName(), 'action' => $action, 'damned' => $damned]);
-
                 if ($action == $damned) {
                     // meurs
-                    $somebodyIsDead = true;
+//                    $somebodyIsDead = true;
                     $app->fetcher->playerSetIsDead($player, 1);
-                    print ('accessing ' . 'looseChoice' . $action . PHP_EOL);
-                    $app->printGameChat($player->getDisplayName() . ": " . $currentScenario['looseChoice' . $action]);
+                    $app->printGameChat("*" . $player->getDisplayName() . '*: ' . $currentScenario['looseChoice' . $action], true);
                 } else {
-                    print ('accessing ' . 'winChoice' . $action . PHP_EOL);
-                    $app->printGameChat($player->getDisplayName() . ": " . $currentScenario['winChoice' . $action]);
+                    $app->printGameChat('*' . $player->getDisplayName() . '*: ' . $currentScenario['winChoice' . $action], true);
                 }
             }
 
-            if (!$somebodyIsDead) {
-                Request::sendMessage(['chat_id' => $game->chat_id, 'text' => "Personne n'est mort! Bande de veinards"]);
-            }
+//            if (!$somebodyIsDead) {
+//                Request::sendMessage(['chat_id' => $game->chat_id, 'text' => "Personne n'est mort! Bande de veinards"]);
+//            }
 
             $app->nextTurn();
         }

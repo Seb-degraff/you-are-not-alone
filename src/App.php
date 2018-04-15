@@ -94,27 +94,37 @@ class App
         $notDeadPlayers = $this->getNotDeadPlayers($players);
 
         if (count($notDeadPlayers) == 0) {
-            $this->printGameChat("Tout le monde est mort, fin de la partie.");
+            $this->printGameChat("Dommage, personne n’a réussi à survivre à cette épreuve ! Fin de la partie.");
             $this->endGame();
             return;
         }
 
         if (count($notDeadPlayers) == 1) {
-            $this->printGameChat($notDeadPlayers[0]->getDisplayName() . " gagne la partie et le trésor, félicitation!!! bravo!");
+            $this->sendImage($this->fetcher->getCurrentGame()->chat_id, 'http://gold.arrache.ch/public/images/butin.png');
+//            $this->printGameChat($notDeadPlayers[0]->getDisplayName() . " gagne la partie et le trésor, félicitation!!!");
+            $this->printGameChat('*' . $notDeadPlayers[0]->getDisplayName() . ":* Bien joué ! Vous êtes le dernier survivant ! prenez le butin, et faites vous plaisir !");
             $this->endGame();
             return;
         }
 
-        sleep(2);
-
         $currentTurn = $this->current_game->current_turn;
         $this->fetcher->setGameCurrentTurn($this->current_game, ++$currentTurn);
+
+        if ($currentTurn >= 5) {
+            $this->sendImage($this->fetcher->getCurrentGame()->chat_id, 'http://gold.arrache.ch/public/images/butin.png');
+            $this->printGameChat("Bravo ! vous êtes venus à bout des épreuves ensemble ! vous pouvez vous partager le butin !");
+            $this->endGame();
+        }
+
+        sleep(2);
 
         $currentStory = $this->getCurrentScenario();
 
         $this->printGameChat(strtoupper('*' . $currentStory['title'] . '*'), true);
 
-        $this->printGameChat($currentStory['story'], true, $currentStory['image']);
+        $this->sendImage($this->fetcher->getCurrentGame()->chat_id, $currentStory['image']);
+
+        $this->printGameChat($currentStory['story']);
 
         sleep(2);
 
@@ -141,20 +151,23 @@ class App
         $statement2 = $this->pdo->query($sql);
         $statement2->execute();
 
-        $playerNamesList = [];
-
-        foreach ($notDeadPlayers as $player) {
-            $playerNamesList[] = $player->getDisplayName();
-        }
 
         foreach ($players as $key => $player) {
             $userId = $player->user_id;
 
+            // reset player state
             $this->fetcher->playerSetActionChosen($player, null);
             $this->fetcher->playerSetHasDoneVision($player, false);
 
-            $reponse = $this->printChat($userId, 'Choisissez une personne dont vous voulez voir le futur (/vision + nom). ' . join($playerNamesList, ', '));
-            print_r(['sending stuff to' => $player->getDisplayName(), 'reponse' => $reponse]);
+            $visionOptions = [];
+
+            foreach ($notDeadPlayers as $notDeadPlayer) {
+                if ($notDeadPlayer->user_id != $player->user_id) {
+                    $visionOptions[] = $notDeadPlayer->getDisplayName();
+                }
+            }
+
+            $reponse = $this->printChat($userId, 'Choisissez une personne dont vous voulez voir le futur (/vision + nom). ' . join($visionOptions, ', '));
 
 //                if ($key == $chosenOneIndex) {
 //                    Request::sendMessage(['chat_id' => $userId, 'text' => 'Tu es le chosen one']);
@@ -166,6 +179,9 @@ class App
 
     public function endGame()
     {
+        sleep(2);
+        $this->printGameChat("Voulez-vous recommencer ? /startGame");
+
         $st = $this->pdo->query("TRUNCATE games");
         $st->execute();
     }
@@ -186,24 +202,37 @@ class App
         return $notDeadPlayers;
     }
 
-    public function printGameChat($text, $markdown = false, $picUrl = null)
+    public function printGameChat($text = null, $markdown = false)
     {
-        return $this->printChat($this->fetcher->getCurrentGame()->chat_id, $text, $markdown, $picUrl);
+        return $this->printChat($this->fetcher->getCurrentGame()->chat_id, $text, $markdown);
     }
 
-    public function printChat($chat_id, $text, $markdown = false, $picUrl = null)
+    public function printChat($chat_id, $text, $markdown = false)
     {
         $data['chat_id'] = $chat_id;
         $data['text'] = $text;
         if ($markdown)
             $data['parse_mode'] = 'Markdown';
-        if ($picUrl)
-            $data['photo'] = $picUrl;
 
         $response = Request::sendMessage($data);
 
         if (!$response->isOk()) {
             echo "Error when sending $text to $chat_id." . PHP_EOL;
+            print_r($response);
+        }
+
+        return $response;
+    }
+
+    public function sendImage($chat_id, $imageUrl)
+    {
+        $data['chat_id'] = $chat_id;
+        $data['photo'] = $imageUrl;
+
+        $response = Request::sendPhoto($data);
+
+        if (!$response->isOk()) {
+            echo "Error when sending image $imageUrl to $chat_id." . PHP_EOL;
             print_r($response);
         }
 
