@@ -193,6 +193,8 @@ class App
 
     public function getNotDeadPlayers($players)
     {
+        $notDeadPlayers = [];
+
         foreach ($players as $player) {
             if ($player->is_dead == 0) {
                 $notDeadPlayers[] = $player;
