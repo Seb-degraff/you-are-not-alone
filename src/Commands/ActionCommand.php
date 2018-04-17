@@ -38,19 +38,17 @@ class ActionCommand extends UserCommand
     public function execute()
     {
         $message = $this->getMessage();
-        $user = $message->getFrom();
+
+        $app = new App($message);
 
         $chat_id = $message->getChat()->getId();
-
-
-        $app = App::$instance;
 
         if (!$app->checkGameIsStarted()) {
             $app->printChat($chat_id, "Le jeu n'a pas encore commencé. (/startGame)");
             return;
         }
 
-        $currentPlayer = $app->fetcher->getPlayerByTelegramId($user->getId());
+        $currentPlayer = $app->player;
 
         if (!$currentPlayer) {
             $app->printChat($chat_id, "Vous ne faites pas partie du jeu pour le moment.");
@@ -63,68 +61,19 @@ class ActionCommand extends UserCommand
         $actionChoice = null;
 
         if ($input === "1") {
-            $actionChoice = 0;
+            $actionChoice = 1;
         }
         if ($input === "2") {
-            $actionChoice = 1;
+            $actionChoice = 0;
         }
 
         if ($actionChoice === null) {
-            $text = "je n'ai pas compris";
-        } else {
-            $text = "ok, ça roule";
-            $app->fetcher->playerSetActionChosen($currentPlayer, $actionChoice);
+            $app->printChat($chat_id, "je n'ai pas compris");
+            return;
         }
 
-        $players = $app->fetcher->getAllPlayers();
+        $app->printChat($chat_id, "Très bien...");
 
-        $everybodyChoosed = true;
-        foreach ($players as $player2)
-        {
-            if ($player2->action_chosen === null && !$player2->is_dead) {
-                $everybodyChoosed = false;
-            }
-        }
-
-        $data = [
-            'chat_id' => $chat_id,
-            'text'    => $text,
-        ];
-
-        Request::sendMessage($data);
-
-        if ($everybodyChoosed) {
-            $game = $app->fetcher->getCurrentGame();
-            $text = 'Tout le monde à choisi!';
-
-            Request::sendMessage(['chat_id' => $game->chat_id, 'text' => $text]);
-
-            $somebodyIsDead = false;
-
-            $currentScenario = $app->getCurrentScenario();
-
-            foreach ($players as $player) {
-                if ($player->is_dead)
-                    continue;
-
-                $action = (int) $player->action_chosen;
-                $damned = $player->participant_id == $game->damned_one_participant_id;
-
-                if ($action == $damned) {
-                    // meurs
-//                    $somebodyIsDead = true;
-                    $app->fetcher->playerSetIsDead($player, 1);
-                    $app->printGameChat("*" . $player->getDisplayName() . '*: ' . $currentScenario['looseChoice' . $action], true);
-                } else {
-                    $app->printGameChat('*' . $player->getDisplayName() . '*: ' . $currentScenario['winChoice' . $action], true);
-                }
-            }
-
-//            if (!$somebodyIsDead) {
-//                Request::sendMessage(['chat_id' => $game->chat_id, 'text' => "Personne n'est mort! Bande de veinards"]);
-//            }
-
-            $app->nextTurn();
-        }
+        $app->choose($actionChoice);
     }
 }

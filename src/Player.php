@@ -12,6 +12,7 @@ class Player
     public $action_chosen;
     public $has_done_vision;
     public $is_dead;
+    public $game_id;
 
     public function getDisplayName()
     {

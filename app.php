@@ -2,13 +2,13 @@
 
 require __DIR__ . "/vendor/autoload.php";
 
-use App\App;
+use App\Kernel;
 
 echo '<pre>';
 
 $config = include('config.php');
 
-new App($config, false);
+new Kernel($config, false);
 
 echo('</pre>');
 echo 'ok';

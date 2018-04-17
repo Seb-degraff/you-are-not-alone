@@ -1,0 +1,129 @@
+<?php
+
+namespace Longman\TelegramBot\Commands\UserCommands;
+use App\App;
+use Longman\TelegramBot\Commands\UserCommand;
+use Longman\TelegramBot\Request;
+
+/**
+ * User "/echo" command
+ *
+ * Simply echo the input back to the user.
+ */
+class ActionCommand extends UserCommand
+{
+    /**
+     * @var string
+     */
+    protected $name = 'chooseAction';
+    /**
+     * @var string
+     */
+    protected $description = 'Start a game';
+    /**
+     * @var string
+     */
+    protected $usage = 'yes';
+    /**
+     * @var string
+     */
+    protected $version = '1.0.0';
+
+    /**
+     * Command execute method
+     *
+     * @return \Longman\TelegramBot\Entities\ServerResponse
+     * @throws \Longman\TelegramBot\Exception\TelegramException
+     */
+    public function execute()
+    {
+        $message = $this->getMessage();
+        $user = $message->getFrom();
+
+        $chat_id = $message->getChat()->getId();
+
+        $app = new App($message);
+
+        if (!$app->checkGameIsStarted()) {
+            $app->printChat($chat_id, "Le jeu n'a pas encore commencé. (/startGame)");
+            return;
+        }
+
+        $currentPlayer = $app->fetcher->getPlayerByTelegramId($user->getId());
+
+        if (!$currentPlayer) {
+            $app->printChat($chat_id, "Vous ne faites pas partie du jeu pour le moment.");
+            return;
+        }
+
+        $input = trim($message->getText(true));
+
+
+        $actionChoice = null;
+
+        if ($input === "1") {
+            $actionChoice = 1;
+        }
+        if ($input === "2") {
+            $actionChoice = 0;
+        }
+
+        if ($actionChoice === null) {
+            $text = "je n'ai pas compris";
+        } else {
+            $text = "Très bien...";
+            $app->fetcher->playerSetActionChosen($currentPlayer, $actionChoice);
+        }
+
+        $players = $app->fetcher->getAllPlayers();
+
+        $everybodyChoosed = true;
+        foreach ($players as $player2)
+        {
+            if ($player2->action_chosen === null && !$player2->is_dead) {
+                $everybodyChoosed = false;
+            }
+        }
+
+        $data = [
+            'chat_id' => $chat_id,
+            'text'    => $text,
+        ];
+
+        Request::sendMessage($data);
+
+        if ($everybodyChoosed) {
+            $game = $app->game;
+            $text = 'Tout le monde à choisi!';
+
+            Request::sendMessage(['chat_id' => $game->chat_id, 'text' => $text]);
+
+            $somebodyIsDead = false;
+
+            $currentScenario = $app->getCurrentScenario();
+
+            foreach ($players as $player) {
+                if ($player->is_dead)
+                    continue;
+
+                $action = (int) $player->action_chosen;
+                $damned = $player->participant_id == $game->damned_one_participant_id;
+
+                if ($action == $damned) {
+                    // meurs
+                    $somebodyIsDead = true;
+                    $app->fetcher->playerSetIsDead($player, 1);
+                    $app->printGameChat("*" . $player->getDisplayName() . '*: ' . $currentScenario['looseChoice' . $action], true);
+                } else {
+                    $app->printGameChat('*' . $player->getDisplayName() . '*: ' . $currentScenario['winChoice' . $action], true);
+                }
+            }
+
+            if (!$somebodyIsDead) {
+                Request::sendMessage(['chat_id' => $game->chat_id, 'text' => "Personne n'est mort! Bande de veinards"]);
+            }
+
+            $app->nextTurn();
+        }
+    }
+}
