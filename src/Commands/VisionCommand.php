@@ -26,7 +26,7 @@ class VisionCommand extends UserCommand
 
         $notDeadPlayers = $app->getNotDeadPlayers($players);
 
-        if (count($notDeadPlayers) == 2) {
+        if (count($notDeadPlayers) == 2 && !$app->player->is_dead) {
             Request::sendMessage(['chat_id' => $chat_id, 'text' => 'Souvenez-vous, vous ne pouvez plus faire de vision. Bonne chance']);
             return;
         }
