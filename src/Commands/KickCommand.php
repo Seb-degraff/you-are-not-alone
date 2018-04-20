@@ -43,8 +43,8 @@ class KickCommand extends UserCommand
 
         $input = trim($message->getText(true));
 
-        $app = App::$instance;
-
+        $app = new App($message);
+git
         $players = $app->fetcher->getAllPlayers();
 
         $text = "je n'ai pas compris";
