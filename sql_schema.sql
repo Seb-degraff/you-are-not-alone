@@ -7,7 +7,7 @@
 #
 # Hôte: 127.0.0.1 (MySQL 5.5.5-10.2.12-MariaDB)
 # Base de données: youarenotalone
-# Temps de génération: 2018-04-15 11:34:27 +0000
+# Temps de génération: 2018-04-28 13:27:45 +0000
 # ************************************************************
 
 
@@ -159,11 +159,12 @@ DROP TABLE IF EXISTS `game_participants`;
 
 CREATE TABLE `game_participants` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `action_chosen` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
   `is_dead` tinyint(1) NOT NULL DEFAULT 0,
+  `action_chosen` int(11) DEFAULT NULL,
   `has_done_vision` tinyint(11) DEFAULT 0,
   `game_id` int(11) DEFAULT NULL,
+  `player_name` text NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -177,10 +178,10 @@ DROP TABLE IF EXISTS `games`;
 
 CREATE TABLE `games` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `state` varchar(11) DEFAULT NULL,
   `damned_one_participant_id` int(11) DEFAULT NULL,
   `chat_id` int(11) DEFAULT NULL,
   `current_turn` int(11) NOT NULL DEFAULT -1,
+  `is_started` tinyint(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
