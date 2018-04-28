@@ -23,17 +23,23 @@ class Kernel
 
     public $config;
 
+    /**
+     * Kernel constructor.
+     * @param array $config
+     */
     public function __construct(array $config)
     {
         static::$instance = $this;
 
-        $whoops = new \Whoops\Run();
-        $errorHandler = new \Whoops\Handler\PrettyPageHandler();
-        $errorHandler->setEditor("phpstorm");
-        $whoops->pushHandler($errorHandler);
-        $whoops->register();
-
         $this->config = $config;
+
+        if ($this->config['enable_woops_error_handler']) {
+            $whoops = new \Whoops\Run();
+            $errorHandler = new \Whoops\Handler\PrettyPageHandler();
+            $errorHandler->setEditor("phpstorm");
+            $whoops->pushHandler($errorHandler);
+            $whoops->register();
+        }
 
         $bot_api_key  = $config['bot_api_key'];
         $bot_username = $config['bot_username'];
