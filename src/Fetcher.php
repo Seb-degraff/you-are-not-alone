@@ -260,7 +260,7 @@ class Fetcher
      * @param int group chat id
      * @return Game|null
      */
-    public function findGameById(int $gameId)
+    public function findGameById($gameId)
     {
         $statement = $this->pdo->prepare("SELECT games.id, games.damned_one_participant_id, games.current_turn, games.chat_id, chat.title as chat_title FROM games JOIN chat ON games.chat_id = chat.id WHERE games.id = :game_id");
         $statement->execute(['game_id' => $gameId]);

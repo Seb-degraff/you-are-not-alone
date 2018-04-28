@@ -52,8 +52,8 @@
       <file leaf-file-name="JoinGameCommand.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Commands/JoinGameCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="23" column="30" lean-forward="false" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+            <state relative-caret-position="396">
+              <caret line="26" column="37" lean-forward="false" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -92,8 +92,8 @@
       <file leaf-file-name="App.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3418">
-              <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+            <state relative-caret-position="456">
+              <caret line="395" column="36" lean-forward="false" selection-start-line="395" selection-start-column="36" selection-end-line="395" selection-end-column="36" />
               <folding>
                 <element signature="e#23#85#0#PHP" expanded="true" />
               </folding>
@@ -104,28 +104,28 @@
       <file leaf-file-name="Fetcher.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Fetcher.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="204" column="50" lean-forward="true" selection-start-line="204" selection-start-column="50" selection-end-line="204" selection-end-column="50" />
+            <state relative-caret-position="313">
+              <caret line="262" column="33" lean-forward="false" selection-start-line="262" selection-start-column="33" selection-end-line="262" selection-end-column="33" />
               <folding>
-                <marker date="1524921836208" expanded="true" signature="1193:1273" ph="SELECT * FRO... game_participants" />
-                <marker date="1524921836208" expanded="true" signature="1902:1981" ph="UPDATE game_participants... " />
-                <marker date="1524921836208" expanded="true" signature="2108:2190" ph="UPDATE game_participants... " />
-                <marker date="1524921836208" expanded="true" signature="2443:2519" ph="UPDATE game_participants... " />
-                <marker date="1524921836208" expanded="true" signature="2921:2997" ph="INSERT INTO game_participants... " />
-                <marker date="1524921836208" expanded="true" signature="3250:3309" ph="DELETE FROM game_participants... " />
-                <marker date="1524921836208" expanded="true" signature="3623:3716" ph="UPDATE game_participants... " />
-                <marker date="1524921836208" expanded="true" signature="4007:4070" ph="UPDATE games... " />
-                <marker date="1524921836208" expanded="true" signature="4279:4376" ph="UPDATE games... " />
-                <marker date="1524921836208" expanded="true" signature="4701:4961" ph="SELECT games... games" />
-                <marker date="1524921836208" expanded="true" signature="5287:5475" ph="SELECT games... games" />
-                <marker date="1524921836208" expanded="true" signature="5704:5749" ph="INSERT INTO games... " />
-                <marker date="1524921836208" expanded="true" signature="6172:6256" ph="INSERT INTO game_participants... " />
-                <marker date="1524921836208" expanded="true" signature="6658:6745" ph="UPDATE game_participants... " />
-                <marker date="1524921836208" expanded="true" signature="7014:7281" ph="SELECT game_... game_participants" />
-                <marker date="1524921836208" expanded="true" signature="7557:7784" ph="SELECT game_... game_participants" />
-                <marker date="1524921836208" expanded="true" signature="8073:8325" ph="SELECT game_... game_participants" />
-                <marker date="1524921836208" expanded="true" signature="8695:8878" ph="SELECT games... games" />
-                <marker date="1524921836208" expanded="true" signature="9140:9297" ph="SELECT games... games" />
+                <marker date="1524921972302" expanded="true" signature="1193:1273" ph="SELECT * FRO... game_participants" />
+                <marker date="1524921972302" expanded="true" signature="1902:1981" ph="UPDATE game_participants... " />
+                <marker date="1524921972302" expanded="true" signature="2108:2190" ph="UPDATE game_participants... " />
+                <marker date="1524921972302" expanded="true" signature="2443:2519" ph="UPDATE game_participants... " />
+                <marker date="1524921972302" expanded="true" signature="2921:2997" ph="INSERT INTO game_participants... " />
+                <marker date="1524921972302" expanded="true" signature="3250:3309" ph="DELETE FROM game_participants... " />
+                <marker date="1524921972302" expanded="true" signature="3623:3716" ph="UPDATE game_participants... " />
+                <marker date="1524921972302" expanded="true" signature="4007:4070" ph="UPDATE games... " />
+                <marker date="1524921972302" expanded="true" signature="4279:4376" ph="UPDATE games... " />
+                <marker date="1524921972302" expanded="true" signature="4701:4961" ph="SELECT games... games" />
+                <marker date="1524921972302" expanded="true" signature="5287:5475" ph="SELECT games... games" />
+                <marker date="1524921972302" expanded="true" signature="5704:5749" ph="INSERT INTO games... " />
+                <marker date="1524921972302" expanded="true" signature="6172:6256" ph="INSERT INTO game_participants... " />
+                <marker date="1524921972302" expanded="true" signature="6658:6745" ph="UPDATE game_participants... " />
+                <marker date="1524921972302" expanded="true" signature="7014:7281" ph="SELECT game_... game_participants" />
+                <marker date="1524921972302" expanded="true" signature="7557:7784" ph="SELECT game_... game_participants" />
+                <marker date="1524921972302" expanded="true" signature="8073:8325" ph="SELECT game_... game_participants" />
+                <marker date="1524921972302" expanded="true" signature="8691:8874" ph="SELECT games... games" />
+                <marker date="1524921972302" expanded="true" signature="9136:9293" ph="SELECT games... games" />
               </folding>
             </state>
           </provider>
@@ -155,8 +155,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>image</find>
-      <find>outpu</find>
       <find>Vous n'</find>
       <find>Vous n'êtes plus que deux joueurs, vous</find>
       <find>choice</find>
@@ -184,6 +182,8 @@
       <find>Yes im</find>
       <find>Yes i</find>
       <find>Don</find>
+      <find>, int</find>
+      <find>(int</find>
       <find>, int</find>
     </findStrings>
     <replaceStrings>
@@ -344,7 +344,7 @@
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="joinga&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/JoinGameCommand.php&#10;kern&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Kernel.php&#10;app&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/App.php&#10;visionc&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/VisionCommand.php&#10;checkgame&#9;null&#9;null&#10;checkgameui&#9;null&#9;null&#10;game&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Game.php&#10;vision&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/VisionCommand.php&#10;deux&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/DeuxiemeChoixCommand.php&#10;premi&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/PremierChoixCommand.php&#10;fetcher&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Fetcher.php&#10;nexttur&#9;null&#9;null&#10;endgame&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/EndGameCommand.php&#10;debug&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/debug_interface.php&#10;pre&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/PremierChoixCommand.php&#10;conf&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/config.php&#10;deu&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/DeuxiemeChoixCommand.php&#10;prem&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/PremierChoixCommand.php&#10;joingam&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/JoinGameCommand.php&#10;start&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;endga&#9;null&#9;null&#10;end&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/EndGameCommand.php&#10;join&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/JoinGameCommand.php&#10;lea&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/LeaveGameCommand.php&#10;leave&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/LeaveGameCommand.php&#10;gameis&#9;null&#9;null&#10;startg&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;star&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;joi&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/JoinGameCommand.php&#10;kernel:80&#9;null&#9;null&#10;de&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/debug_interface.php&#10;283&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/.idea/dataSources/e7ca42f4-0866-4397-ae10-94b7b2baf7a9.xml&#10;choix&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/PremierChoixCommand.php&#10;choic&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/PremierChoixCommand.php&#10;deb&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/debug_interface.php&#10;startgam&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;fet&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Fetcher.php&#10;player&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Player.php&#10;debin&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/debug_interface.php&#10;debugin&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/debug_interface.php&#10;Game&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Game.php&#10;nextt&#9;null&#9;null&#10;vis&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/VisionCommand.php&#10;kick&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/KickCommand.php&#10;web_&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/web_hook.php&#10;ac&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/ActionCommand.php&#10;nexttu&#9;null&#9;null&#10;ker&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Kernel.php&#10;actionc&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/ActionCommand.php&#10;action&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/ActionCommand.php" />
+    <property name="SearchEverywhereHistoryKey" value="joingame&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/JoinGameCommand.php&#10;joinga&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/JoinGameCommand.php&#10;kern&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Kernel.php&#10;app&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/App.php&#10;visionc&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/VisionCommand.php&#10;checkgame&#9;null&#9;null&#10;checkgameui&#9;null&#9;null&#10;game&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Game.php&#10;vision&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/VisionCommand.php&#10;deux&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/DeuxiemeChoixCommand.php&#10;premi&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/PremierChoixCommand.php&#10;fetcher&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Fetcher.php&#10;nexttur&#9;null&#9;null&#10;endgame&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/EndGameCommand.php&#10;debug&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/debug_interface.php&#10;pre&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/PremierChoixCommand.php&#10;conf&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/config.php&#10;deu&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/DeuxiemeChoixCommand.php&#10;prem&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/PremierChoixCommand.php&#10;joingam&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/JoinGameCommand.php&#10;start&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;endga&#9;null&#9;null&#10;end&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/EndGameCommand.php&#10;join&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/JoinGameCommand.php&#10;lea&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/LeaveGameCommand.php&#10;leave&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/LeaveGameCommand.php&#10;gameis&#9;null&#9;null&#10;startg&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;star&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;joi&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/JoinGameCommand.php&#10;kernel:80&#9;null&#9;null&#10;de&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/debug_interface.php&#10;283&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/.idea/dataSources/e7ca42f4-0866-4397-ae10-94b7b2baf7a9.xml&#10;choix&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/PremierChoixCommand.php&#10;choic&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/PremierChoixCommand.php&#10;deb&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/debug_interface.php&#10;startgam&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;fet&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Fetcher.php&#10;player&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Player.php&#10;debin&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/debug_interface.php&#10;debugin&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/debug_interface.php&#10;Game&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Game.php&#10;nextt&#9;null&#9;null&#10;vis&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/VisionCommand.php&#10;kick&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/KickCommand.php&#10;web_&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/web_hook.php&#10;ac&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/ActionCommand.php&#10;nexttu&#9;null&#9;null&#10;ker&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Kernel.php&#10;actionc&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/ActionCommand.php" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
@@ -412,12 +412,12 @@
       <workItem from="1524603817662" duration="5292000" />
       <workItem from="1524728014806" duration="2253000" />
       <workItem from="1524754120911" duration="879000" />
-      <workItem from="1524909604525" duration="9426000" />
+      <workItem from="1524909604525" duration="9561000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123262000" />
+    <option name="totallyTimeSpent" value="123397000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1680" height="1028" extended-state="6" />
@@ -814,16 +814,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Commands/JoinGameCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="23" column="30" lean-forward="false" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+        <state relative-caret-position="396">
+          <caret line="26" column="37" lean-forward="false" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3418">
-          <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        <state relative-caret-position="456">
+          <caret line="395" column="36" lean-forward="false" selection-start-line="395" selection-start-column="36" selection-end-line="395" selection-end-column="36" />
           <folding>
             <element signature="e#23#85#0#PHP" expanded="true" />
           </folding>
@@ -832,28 +832,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Fetcher.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="204" column="50" lean-forward="true" selection-start-line="204" selection-start-column="50" selection-end-line="204" selection-end-column="50" />
+        <state relative-caret-position="313">
+          <caret line="262" column="33" lean-forward="false" selection-start-line="262" selection-start-column="33" selection-end-line="262" selection-end-column="33" />
           <folding>
-            <marker date="1524921836208" expanded="true" signature="1193:1273" ph="SELECT * FRO... game_participants" />
-            <marker date="1524921836208" expanded="true" signature="1902:1981" ph="UPDATE game_participants... " />
-            <marker date="1524921836208" expanded="true" signature="2108:2190" ph="UPDATE game_participants... " />
-            <marker date="1524921836208" expanded="true" signature="2443:2519" ph="UPDATE game_participants... " />
-            <marker date="1524921836208" expanded="true" signature="2921:2997" ph="INSERT INTO game_participants... " />
-            <marker date="1524921836208" expanded="true" signature="3250:3309" ph="DELETE FROM game_participants... " />
-            <marker date="1524921836208" expanded="true" signature="3623:3716" ph="UPDATE game_participants... " />
-            <marker date="1524921836208" expanded="true" signature="4007:4070" ph="UPDATE games... " />
-            <marker date="1524921836208" expanded="true" signature="4279:4376" ph="UPDATE games... " />
-            <marker date="1524921836208" expanded="true" signature="4701:4961" ph="SELECT games... games" />
-            <marker date="1524921836208" expanded="true" signature="5287:5475" ph="SELECT games... games" />
-            <marker date="1524921836208" expanded="true" signature="5704:5749" ph="INSERT INTO games... " />
-            <marker date="1524921836208" expanded="true" signature="6172:6256" ph="INSERT INTO game_participants... " />
-            <marker date="1524921836208" expanded="true" signature="6658:6745" ph="UPDATE game_participants... " />
-            <marker date="1524921836208" expanded="true" signature="7014:7281" ph="SELECT game_... game_participants" />
-            <marker date="1524921836208" expanded="true" signature="7557:7784" ph="SELECT game_... game_participants" />
-            <marker date="1524921836208" expanded="true" signature="8073:8325" ph="SELECT game_... game_participants" />
-            <marker date="1524921836208" expanded="true" signature="8695:8878" ph="SELECT games... games" />
-            <marker date="1524921836208" expanded="true" signature="9140:9297" ph="SELECT games... games" />
+            <marker date="1524921972302" expanded="true" signature="1193:1273" ph="SELECT * FRO... game_participants" />
+            <marker date="1524921972302" expanded="true" signature="1902:1981" ph="UPDATE game_participants... " />
+            <marker date="1524921972302" expanded="true" signature="2108:2190" ph="UPDATE game_participants... " />
+            <marker date="1524921972302" expanded="true" signature="2443:2519" ph="UPDATE game_participants... " />
+            <marker date="1524921972302" expanded="true" signature="2921:2997" ph="INSERT INTO game_participants... " />
+            <marker date="1524921972302" expanded="true" signature="3250:3309" ph="DELETE FROM game_participants... " />
+            <marker date="1524921972302" expanded="true" signature="3623:3716" ph="UPDATE game_participants... " />
+            <marker date="1524921972302" expanded="true" signature="4007:4070" ph="UPDATE games... " />
+            <marker date="1524921972302" expanded="true" signature="4279:4376" ph="UPDATE games... " />
+            <marker date="1524921972302" expanded="true" signature="4701:4961" ph="SELECT games... games" />
+            <marker date="1524921972302" expanded="true" signature="5287:5475" ph="SELECT games... games" />
+            <marker date="1524921972302" expanded="true" signature="5704:5749" ph="INSERT INTO games... " />
+            <marker date="1524921972302" expanded="true" signature="6172:6256" ph="INSERT INTO game_participants... " />
+            <marker date="1524921972302" expanded="true" signature="6658:6745" ph="UPDATE game_participants... " />
+            <marker date="1524921972302" expanded="true" signature="7014:7281" ph="SELECT game_... game_participants" />
+            <marker date="1524921972302" expanded="true" signature="7557:7784" ph="SELECT game_... game_participants" />
+            <marker date="1524921972302" expanded="true" signature="8073:8325" ph="SELECT game_... game_participants" />
+            <marker date="1524921972302" expanded="true" signature="8691:8874" ph="SELECT games... games" />
+            <marker date="1524921972302" expanded="true" signature="9136:9293" ph="SELECT games... games" />
           </folding>
         </state>
       </provider>

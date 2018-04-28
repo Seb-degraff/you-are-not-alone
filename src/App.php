@@ -384,7 +384,7 @@ class App
         return $this->fetcher->newPlayer($name, $telegramId);
     }
 
-    public function getOrCreatePlayer(int $telegramId)
+    public function getOrCreatePlayer($telegramId)
     {
         $player = $this->fetcher->findPlayerByTelegramId($telegramId);
         if (!$player) {
@@ -393,7 +393,7 @@ class App
         return $player;
     }
 
-    public function getOrCreateGame(int $chatId)
+    public function getOrCreateGame($chatId)
     {
         $game = $this->fetcher->findGameByGroupChatId($chatId);
         if (!$game) {
