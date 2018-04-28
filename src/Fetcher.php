@@ -199,7 +199,7 @@ class Fetcher
      * @param int|null $telegramId  Can be null for debug users
      * @return mixed
      */
-    public function newPlayer(string $playerName, $telegramId = null)
+    public function newPlayer($playerName, $telegramId = null)
     {
         $statement = $this->pdo->prepare("INSERT INTO game_participants (player_name, user_id) VALUES (:player_name, :user_id)");
         $statement->execute([':player_name' => $playerName, 'user_id' => $telegramId]);

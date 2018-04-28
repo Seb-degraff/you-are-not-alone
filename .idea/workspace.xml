@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d3d83e9-131a-482f-96cc-1b87c7ceeeba" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/App.php" afterPath="$PROJECT_DIR$/src/App.php" />
       <change beforePath="$PROJECT_DIR$/src/Fetcher.php" afterPath="$PROJECT_DIR$/src/Fetcher.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -107,25 +106,25 @@
             <state relative-caret-position="313">
               <caret line="262" column="33" lean-forward="false" selection-start-line="262" selection-start-column="33" selection-end-line="262" selection-end-column="33" />
               <folding>
-                <marker date="1524921972302" expanded="true" signature="1193:1273" ph="SELECT * FRO... game_participants" />
-                <marker date="1524921972302" expanded="true" signature="1902:1981" ph="UPDATE game_participants... " />
-                <marker date="1524921972302" expanded="true" signature="2108:2190" ph="UPDATE game_participants... " />
-                <marker date="1524921972302" expanded="true" signature="2443:2519" ph="UPDATE game_participants... " />
-                <marker date="1524921972302" expanded="true" signature="2921:2997" ph="INSERT INTO game_participants... " />
-                <marker date="1524921972302" expanded="true" signature="3250:3309" ph="DELETE FROM game_participants... " />
-                <marker date="1524921972302" expanded="true" signature="3623:3716" ph="UPDATE game_participants... " />
-                <marker date="1524921972302" expanded="true" signature="4007:4070" ph="UPDATE games... " />
-                <marker date="1524921972302" expanded="true" signature="4279:4376" ph="UPDATE games... " />
-                <marker date="1524921972302" expanded="true" signature="4701:4961" ph="SELECT games... games" />
-                <marker date="1524921972302" expanded="true" signature="5287:5475" ph="SELECT games... games" />
-                <marker date="1524921972302" expanded="true" signature="5704:5749" ph="INSERT INTO games... " />
-                <marker date="1524921972302" expanded="true" signature="6172:6256" ph="INSERT INTO game_participants... " />
-                <marker date="1524921972302" expanded="true" signature="6658:6745" ph="UPDATE game_participants... " />
-                <marker date="1524921972302" expanded="true" signature="7014:7281" ph="SELECT game_... game_participants" />
-                <marker date="1524921972302" expanded="true" signature="7557:7784" ph="SELECT game_... game_participants" />
-                <marker date="1524921972302" expanded="true" signature="8073:8325" ph="SELECT game_... game_participants" />
-                <marker date="1524921972302" expanded="true" signature="8691:8874" ph="SELECT games... games" />
-                <marker date="1524921972302" expanded="true" signature="9136:9293" ph="SELECT games... games" />
+                <marker date="1524922235319" expanded="true" signature="1193:1273" ph="SELECT * FRO... game_participants" />
+                <marker date="1524922235319" expanded="true" signature="1902:1981" ph="UPDATE game_participants... " />
+                <marker date="1524922235319" expanded="true" signature="2108:2190" ph="UPDATE game_participants... " />
+                <marker date="1524922235319" expanded="true" signature="2443:2519" ph="UPDATE game_participants... " />
+                <marker date="1524922235319" expanded="true" signature="2921:2997" ph="INSERT INTO game_participants... " />
+                <marker date="1524922235319" expanded="true" signature="3250:3309" ph="DELETE FROM game_participants... " />
+                <marker date="1524922235319" expanded="true" signature="3623:3716" ph="UPDATE game_participants... " />
+                <marker date="1524922235319" expanded="true" signature="4007:4070" ph="UPDATE games... " />
+                <marker date="1524922235319" expanded="true" signature="4279:4376" ph="UPDATE games... " />
+                <marker date="1524922235319" expanded="true" signature="4701:4961" ph="SELECT games... games" />
+                <marker date="1524922235319" expanded="true" signature="5287:5475" ph="SELECT games... games" />
+                <marker date="1524922235319" expanded="true" signature="5704:5749" ph="INSERT INTO games... " />
+                <marker date="1524922235319" expanded="true" signature="6165:6249" ph="INSERT INTO game_participants... " />
+                <marker date="1524922235319" expanded="true" signature="6651:6738" ph="UPDATE game_participants... " />
+                <marker date="1524922235319" expanded="true" signature="7007:7274" ph="SELECT game_... game_participants" />
+                <marker date="1524922235319" expanded="true" signature="7550:7777" ph="SELECT game_... game_participants" />
+                <marker date="1524922235319" expanded="true" signature="8066:8318" ph="SELECT game_... game_participants" />
+                <marker date="1524922235319" expanded="true" signature="8684:8867" ph="SELECT games... games" />
+                <marker date="1524922235319" expanded="true" signature="9129:9286" ph="SELECT games... games" />
               </folding>
             </state>
           </provider>
@@ -412,12 +411,12 @@
       <workItem from="1524603817662" duration="5292000" />
       <workItem from="1524728014806" duration="2253000" />
       <workItem from="1524754120911" duration="879000" />
-      <workItem from="1524909604525" duration="9561000" />
+      <workItem from="1524909604525" duration="9729000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123397000" />
+    <option name="totallyTimeSpent" value="123565000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1680" height="1028" extended-state="6" />
@@ -835,25 +834,25 @@
         <state relative-caret-position="313">
           <caret line="262" column="33" lean-forward="false" selection-start-line="262" selection-start-column="33" selection-end-line="262" selection-end-column="33" />
           <folding>
-            <marker date="1524921972302" expanded="true" signature="1193:1273" ph="SELECT * FRO... game_participants" />
-            <marker date="1524921972302" expanded="true" signature="1902:1981" ph="UPDATE game_participants... " />
-            <marker date="1524921972302" expanded="true" signature="2108:2190" ph="UPDATE game_participants... " />
-            <marker date="1524921972302" expanded="true" signature="2443:2519" ph="UPDATE game_participants... " />
-            <marker date="1524921972302" expanded="true" signature="2921:2997" ph="INSERT INTO game_participants... " />
-            <marker date="1524921972302" expanded="true" signature="3250:3309" ph="DELETE FROM game_participants... " />
-            <marker date="1524921972302" expanded="true" signature="3623:3716" ph="UPDATE game_participants... " />
-            <marker date="1524921972302" expanded="true" signature="4007:4070" ph="UPDATE games... " />
-            <marker date="1524921972302" expanded="true" signature="4279:4376" ph="UPDATE games... " />
-            <marker date="1524921972302" expanded="true" signature="4701:4961" ph="SELECT games... games" />
-            <marker date="1524921972302" expanded="true" signature="5287:5475" ph="SELECT games... games" />
-            <marker date="1524921972302" expanded="true" signature="5704:5749" ph="INSERT INTO games... " />
-            <marker date="1524921972302" expanded="true" signature="6172:6256" ph="INSERT INTO game_participants... " />
-            <marker date="1524921972302" expanded="true" signature="6658:6745" ph="UPDATE game_participants... " />
-            <marker date="1524921972302" expanded="true" signature="7014:7281" ph="SELECT game_... game_participants" />
-            <marker date="1524921972302" expanded="true" signature="7557:7784" ph="SELECT game_... game_participants" />
-            <marker date="1524921972302" expanded="true" signature="8073:8325" ph="SELECT game_... game_participants" />
-            <marker date="1524921972302" expanded="true" signature="8691:8874" ph="SELECT games... games" />
-            <marker date="1524921972302" expanded="true" signature="9136:9293" ph="SELECT games... games" />
+            <marker date="1524922235319" expanded="true" signature="1193:1273" ph="SELECT * FRO... game_participants" />
+            <marker date="1524922235319" expanded="true" signature="1902:1981" ph="UPDATE game_participants... " />
+            <marker date="1524922235319" expanded="true" signature="2108:2190" ph="UPDATE game_participants... " />
+            <marker date="1524922235319" expanded="true" signature="2443:2519" ph="UPDATE game_participants... " />
+            <marker date="1524922235319" expanded="true" signature="2921:2997" ph="INSERT INTO game_participants... " />
+            <marker date="1524922235319" expanded="true" signature="3250:3309" ph="DELETE FROM game_participants... " />
+            <marker date="1524922235319" expanded="true" signature="3623:3716" ph="UPDATE game_participants... " />
+            <marker date="1524922235319" expanded="true" signature="4007:4070" ph="UPDATE games... " />
+            <marker date="1524922235319" expanded="true" signature="4279:4376" ph="UPDATE games... " />
+            <marker date="1524922235319" expanded="true" signature="4701:4961" ph="SELECT games... games" />
+            <marker date="1524922235319" expanded="true" signature="5287:5475" ph="SELECT games... games" />
+            <marker date="1524922235319" expanded="true" signature="5704:5749" ph="INSERT INTO games... " />
+            <marker date="1524922235319" expanded="true" signature="6165:6249" ph="INSERT INTO game_participants... " />
+            <marker date="1524922235319" expanded="true" signature="6651:6738" ph="UPDATE game_participants... " />
+            <marker date="1524922235319" expanded="true" signature="7007:7274" ph="SELECT game_... game_participants" />
+            <marker date="1524922235319" expanded="true" signature="7550:7777" ph="SELECT game_... game_participants" />
+            <marker date="1524922235319" expanded="true" signature="8066:8318" ph="SELECT game_... game_participants" />
+            <marker date="1524922235319" expanded="true" signature="8684:8867" ph="SELECT games... games" />
+            <marker date="1524922235319" expanded="true" signature="9129:9286" ph="SELECT games... games" />
           </folding>
         </state>
       </provider>
