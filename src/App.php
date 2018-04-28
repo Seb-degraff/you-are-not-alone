@@ -4,17 +4,10 @@ namespace App;
 
 use Longman\TelegramBot\Commands\UserCommands\JoinGameCommand;
 use Longman\TelegramBot\Commands\UserCommands\StartGameCommand;
-use Longman\TelegramBot\Entities\Message;
-use Longman\TelegramBot\Exception\TelegramException;
 use Longman\TelegramBot\Request;
-use Longman\TelegramBot\Telegram;
 
 class App
 {
-//    /**
-//     * @var App
-//     */
-//    public static $instance;
     public $storyContent;
     public $fetcher;
 
@@ -63,7 +56,7 @@ class App
 //            print ("no current game" . PHP_EOL);
     }
 
-    public function checkIsGroupChat(int $chatId)
+    public function checkIsGroupChat($chatId)
     {
         if ($chatId > 0) {
             $this->printChat($chatId, "Vous ne pouvez pas executer cette commande dans un message privé");

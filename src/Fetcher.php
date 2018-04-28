@@ -96,9 +96,9 @@ class Fetcher
         }
     }
 
-    public function player_SetIsDead(Player $player, int $isDead)
+    public function player_SetIsDead(Player $player, $isDead)
     {
-        $player->is_dead = $isDead;
+        $player->is_dead = (int) $isDead;
         $statement = $this->pdo->query("UPDATE game_participants SET is_dead = $isDead WHERE game_participants.id = {$player->participant_id}");
         $statement->execute();
     }
@@ -199,7 +199,7 @@ class Fetcher
      * @param int|null $telegramId  Can be null for debug users
      * @return mixed
      */
-    public function newPlayer(string $playerName, int $telegramId = null)
+    public function newPlayer(string $playerName, $telegramId = null)
     {
         $statement = $this->pdo->prepare("INSERT INTO game_participants (player_name, user_id) VALUES (:player_name, :user_id)");
         $statement->execute([':player_name' => $playerName, 'user_id' => $telegramId]);
