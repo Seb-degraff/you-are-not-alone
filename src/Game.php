@@ -13,8 +13,6 @@ class Game
 
     public function isStarted()
     {
-        print PHP_EOL . 'current turn: ' . $this->current_turn . PHP_EOL;
-
         return $this->current_turn >= 0;
     }
 }

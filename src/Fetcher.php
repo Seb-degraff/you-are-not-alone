@@ -28,7 +28,7 @@ class Fetcher
      */
     public function getPlayerByTelegramId($id)
     {
-        $players = $this->getAllPlayers();
+        $players = $this->findAllPlayers();
 
         foreach ($players as $player)
         {
@@ -47,7 +47,7 @@ class Fetcher
      */
     public function getPlayerByName($name)
     {
-        $players = $this->getAllPlayers();
+        $players = $this->findAllPlayers();
 
         foreach ($players as $player)
         {
@@ -60,17 +60,7 @@ class Fetcher
         return null;
     }
 
-    /**
-     * @return Player[]
-     */
-    public function getAllPlayers()
-    {
-        $statement = $this->pdo->query("SELECT game_participants.id as participant_id, user_id, first_name, last_name, username, action_chosen, has_done_vision, is_dead FROM game_participants JOIN user ON game_participants.user_id = user.id");
-        $statement->setFetchMode(\PDO::FETCH_CLASS, Player::class);
-        $players = $statement->fetchAll();
 
-        return $players;
-    }
 
     /**
      * @return Player[]
@@ -116,13 +106,14 @@ class Fetcher
         $player->action_chosen = $action;
         if ($action === null) {
             $statement = $this->pdo->prepare("UPDATE game_participants SET action_chosen = NULL WHERE game_participants.id = {$player->participant_id}");
+            $statement->execute();
         } else {
             $statement = $this->pdo->prepare("UPDATE game_participants SET action_chosen = :action WHERE game_participants.id = {$player->participant_id}");
+            $statement->execute([':action' => $action]);
         }
-        $statement->execute([':action' => $action]);
     }
 
-    public function playerSetIsDead(Player $player, $isDead)
+    public function player_SetIsDead(Player $player, int $isDead)
     {
         $player->is_dead = $isDead;
         $statement = $this->pdo->query("UPDATE game_participants SET is_dead = $isDead WHERE game_participants.id = {$player->participant_id}");
@@ -177,7 +168,7 @@ class Fetcher
         $statement->execute([':current_turn' => $currentTurn]);
     }
 
-    public function gameSetDamnedOne(Game $game, $damnedOneParticipantId)
+    public function game_SetDamnedOne(Game $game, $damnedOneParticipantId)
     {
         $statement = $this->pdo->prepare("UPDATE games SET damned_one_participant_id = :damned_one_participant_id WHERE games.id = :game_id");
         $statement->execute([
@@ -219,4 +210,109 @@ class Fetcher
 
         return $this->getGameFromGroupChatId($chatId);
     }
+
+    /**
+     * @param string $playerName    The name after which the game knows this player
+     * @param int|null $telegramId  Can be null for debug users
+     * @return mixed
+     */
+    public function newPlayer(string $playerName, int $telegramId = null)
+    {
+        $statement = $this->pdo->prepare("INSERT INTO game_participants (player_name, user_id) VALUES (:player_name, :user_id)");
+        $statement->execute([':player_name' => $playerName, 'user_id' => $telegramId]);
+
+        $playerId = $this->pdo->lastInsertId();
+        echo $playerId;
+
+        return $this->findPlayerById($playerId);
+    }
+
+    public function player_SetGame(Player $player, Game $game = null)
+    {
+        $player->game_id = $game != null ? $game->id : null;
+
+        $statement = $this->pdo->prepare("UPDATE game_participants SET game_id = :game_id WHERE game_participants.id = :player_id");
+        $statement->execute([':player_id' => $player->participant_id, ':game_id' => $game === null ? null : $game->id]);
+    }
+
+    /**
+     * @return Player|null
+     */
+    public function findPlayerById($playerId)
+    {
+        $statement = $this->pdo->prepare("SELECT game_participants.id as participant_id, player_name, user_id, first_name, last_name, username, action_chosen, has_done_vision, is_dead, game_id FROM game_participants LEFT JOIN user ON game_participants.user_id = user.id WHERE game_participants.id = :player_id");
+        $statement->execute([':player_id' => $playerId]);
+        $player = $statement->fetchObject(Player::class);
+
+        return $player;
+
+    }
+
+    /**
+     * @return Player[]
+     */
+    public function findAllPlayers()
+    {
+        $statement = $this->pdo->query("SELECT game_participants.id as participant_id, player_name, user_id, first_name, last_name, username, action_chosen, has_done_vision, is_dead, game_id FROM game_participants LEFT JOIN user ON game_participants.user_id = user.id");
+        $statement->setFetchMode(\PDO::FETCH_CLASS, Player::class);
+        $players = $statement->fetchAll();
+
+        return $players;
+    }
+
+    /**
+     * @return Player[]
+     */
+    public function findAllPlayersInGame(Game $game)
+    {
+        $statement = $this->pdo->prepare("SELECT game_participants.id as participant_id, player_name, user_id, first_name, last_name, username, action_chosen, has_done_vision, is_dead, game_id FROM game_participants LEFT JOIN user ON game_participants.user_id = user.id WHERE game_id = :game_id");
+        $statement->setFetchMode(\PDO::FETCH_CLASS, Player::class);
+        $statement->execute(['game_id' => $game->id]);
+        $players = $statement->fetchAll();
+
+        return $players;
+    }
+
+    /**
+     * @param int group chat id
+     * @return Game|null
+     */
+    public function findGameById(int $gameId)
+    {
+        $statement = $this->pdo->prepare("SELECT games.id, games.damned_one_participant_id, games.current_turn, games.chat_id, chat.title as chat_title FROM games JOIN chat ON games.chat_id = chat.id WHERE games.id = :game_id");
+        $statement->execute(['game_id' => $gameId]);
+        $game = $statement->fetchObject(Game::class);
+
+        return $game;
+    }
+
+    /**
+     * @return Game[]
+     */
+    public function findAllGames()
+    {
+        $statement = $this->pdo->prepare("SELECT games.id, games.damned_one_participant_id, games.current_turn, games.chat_id, chat.title as chat_title FROM games JOIN chat ON games.chat_id = chat.id");
+        $statement->setFetchMode(\PDO::FETCH_CLASS, Game::class);
+        $statement->execute();
+        $games = $statement->fetchAll();
+
+        return $games;
+    }
+
+//    const PLAYER_FIELDS = "game_participants.id as participant_id, player_name, user_id, first_name, last_name, username, action_chosen, has_done_vision, is_dead";
+
+//    public function getPlayerFields(): string
+//    {
+//        //return $this->getClassFields(Player::class);
+//    }
+//
+//    public function getGameFields(): string
+//    {
+//        return $this->getClassFields(Game::class);
+//    }
+//
+//    private function getClassFields($className): string
+//    {
+//        return join(',', array_keys(get_class_vars($className)));
+//    }
 }

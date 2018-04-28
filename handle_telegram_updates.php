@@ -8,7 +8,8 @@ echo '<pre>';
 
 $config = include('config.php');
 
-new Kernel($config, false);
+$kernel = new Kernel($config);
+$kernel->doTelegramUpdates();
 
 echo('</pre>');
 echo 'ok';

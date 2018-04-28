@@ -22,7 +22,7 @@ class VisionCommand extends UserCommand
             return;
         }
 
-        $players = $app->fetcher->getAllPlayers();
+        $players = $app->fetcher->findAllPlayers();
 
         $notDeadPlayers = $app->getNotDeadPlayers($players);
 

@@ -2,8 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d3d83e9-131a-482f-96cc-1b87c7ceeeba" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/debug_interface.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/BufferOutput.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/TelegramOutput.php" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e7ca42f4-0866-4397-ae10-94b7b2baf7a9.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/e7ca42f4-0866-4397-ae10-94b7b2baf7a9.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app.php" afterPath="$PROJECT_DIR$/handle_telegram_updates.php" />
+      <change beforePath="$PROJECT_DIR$/src/App.php" afterPath="$PROJECT_DIR$/src/App.php" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/KickCommand.php" afterPath="$PROJECT_DIR$/src/Commands/KickCommand.php" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/StartGameCommand.php" afterPath="$PROJECT_DIR$/src/Commands/StartGameCommand.php" />
       <change beforePath="$PROJECT_DIR$/src/Commands/VisionCommand.php" afterPath="$PROJECT_DIR$/src/Commands/VisionCommand.php" />
+      <change beforePath="$PROJECT_DIR$/src/Fetcher.php" afterPath="$PROJECT_DIR$/src/Fetcher.php" />
+      <change beforePath="$PROJECT_DIR$/src/Game.php" afterPath="$PROJECT_DIR$/src/Game.php" />
+      <change beforePath="$PROJECT_DIR$/src/Kernel.php" afterPath="$PROJECT_DIR$/src/Kernel.php" />
+      <change beforePath="$PROJECT_DIR$/src/Player.php" afterPath="$PROJECT_DIR$/src/Player.php" />
+      <change beforePath="$PROJECT_DIR$/web_hook.php" afterPath="$PROJECT_DIR$/web_hook.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,62 +43,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="story_content2.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/story_content2.php">
+      <file leaf-file-name="debug_interface.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/debug_interface.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="180">
+              <caret line="10" column="42" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="games" pinned="false" current-in-tab="false">
-        <entry file="das://table:/9b1ffb9d/e7ca42f4-0866-4397-ae10-94b7b2baf7a9/youarenotalone.games">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App.php">
+      <file leaf-file-name="handle_telegram_updates.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/handle_telegram_updates.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2718">
-              <caret line="155" column="59" lean-forward="false" selection-start-line="155" selection-start-column="59" selection-end-line="155" selection-end-column="59" />
-              <folding>
-                <element signature="e#23#85#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="2" lean-forward="false" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="unset_web_hook.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/unset_web_hook.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KickCommand.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Commands/KickCommand.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="32" column="16" lean-forward="false" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+            <state relative-caret-position="198">
+              <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -100,31 +73,97 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web_hook.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web_hook.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Kernel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Kernel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+            <state relative-caret-position="378">
+              <caret line="23" column="41" lean-forward="false" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VisionCommand.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Commands/VisionCommand.php">
+      <file leaf-file-name="App.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="519">
-              <caret line="38" column="34" lean-forward="true" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+            <state relative-caret-position="411">
+              <caret line="26" column="73" lean-forward="false" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="73" />
+              <folding>
+                <element signature="e#23#85#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TelegramOutput.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/TelegramOutput.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="23" column="44" lean-forward="true" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BufferOutput.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/BufferOutput.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="24" column="25" lean-forward="false" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Fetcher.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Fetcher.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="169">
+              <caret line="237" column="7" lean-forward="true" selection-start-line="237" selection-start-column="7" selection-end-line="237" selection-end-column="7" />
+              <folding>
+                <marker date="1524910132640" expanded="true" signature="1224:1542" ph="SELECT game_... games" />
+                <marker date="1524910132640" expanded="true" signature="1880:1960" ph="SELECT * FRO... game_participants" />
+                <marker date="1524910132640" expanded="true" signature="2589:2668" ph="UPDATE game_participants... " />
+                <marker date="1524910132640" expanded="true" signature="2795:2877" ph="UPDATE game_participants... " />
+                <marker date="1524910132640" expanded="true" signature="3128:3204" ph="UPDATE game_participants... " />
+                <marker date="1524910132640" expanded="true" signature="3605:3681" ph="INSERT INTO game_participants... " />
+                <marker date="1524910132640" expanded="true" signature="3933:3992" ph="DELETE FROM game_participants... " />
+                <marker date="1524910132640" expanded="true" signature="4306:4399" ph="UPDATE game_participants... " />
+                <marker date="1524910132640" expanded="true" signature="4690:4753" ph="UPDATE games... " />
+                <marker date="1524910132640" expanded="true" signature="4962:5059" ph="UPDATE games... " />
+                <marker date="1524910132640" expanded="true" signature="5384:5644" ph="SELECT games... games" />
+                <marker date="1524910132640" expanded="true" signature="5971:6159" ph="SELECT games... games" />
+                <marker date="1524910132640" expanded="true" signature="6388:6433" ph="INSERT INTO games... " />
+                <marker date="1524910132640" expanded="true" signature="6861:6945" ph="INSERT INTO game_participants... " />
+                <marker date="1524910132640" expanded="true" signature="7347:7424" ph="UPDATE game_participants... " />
+                <marker date="1524910132640" expanded="true" signature="7347:7434" ph="UPDATE game_participants... " />
+                <marker date="1524910132640" expanded="true" signature="7703:7844" ph="SELECT game_... game_participants" />
+                <marker date="1524910132640" expanded="true" signature="7703:7970" ph="SELECT game_... game_participants" />
+                <marker date="1524910132640" expanded="true" signature="8246:8473" ph="SELECT game_... game_participants" />
+                <marker date="1524910132640" expanded="true" signature="8762:9014" ph="SELECT game_... game_participants" />
+                <marker date="1524910132640" expanded="true" signature="9384:9560" ph="SELECT games... games" />
+                <marker date="1524910132640" expanded="true" signature="9384:9567" ph="SELECT games... games" />
+                <marker date="1524910132640" expanded="true" signature="9829:9986" ph="SELECT games... games" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StartGameCommand.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Commands/StartGameCommand.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="721">
+              <caret line="66" column="29" lean-forward="false" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PremierChoixCommand.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Commands/PremierChoixCommand.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="19" column="83" lean-forward="false" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="83" />
               <folding />
             </state>
           </provider>
@@ -134,36 +173,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>current_game</find>
-      <find>INSERT</find>
-      <find>removeGame</find>
-      <find>$current_game</find>
-      <find>join</find>
-      <find>print</find>
-      <find>add</find>
-      <find>print_r</find>
-      <find>adieu</find>
-      <find>leave</find>
-      <find>config</find>
-      <find>image</find>
-      <find>sleep</find>
-      <find>Mais a</find>
-      <find>BRav</find>
-      <find>Nous som</find>
-      <find>StartGameCommand</find>
+      <find>$player</find>
+      <find>$isWebHook</find>
+      <find>byuserna,e</find>
+      <find>by</find>
+      <find>byname</find>
+      <find>$userId</find>
       <find>joinGame</find>
-      <find>$game</find>
-      <find>ok</find>
-      <find>'choice1'</find>
-      <find>'choicetemp'</find>
-      <find>'visionChoice2'</find>
-      <find>Choix 1</find>
-      <find>choice0</find>
-      <find>'choice2'</find>
-      <find>'looseChoice2'</find>
-      <find>$app-&gt;</find>
+      <find>Game</find>
+      <find>printGameChat</find>
+      <find>join</find>
+      <find>leaveGame</find>
+      <find>allgames</find>
+      <find>check</find>
+      <find>checkgameiss</find>
+      <find>startGame</find>
+      <find>nexttur</find>
+      <find>current turn:</find>
+      <find>proposeActions</find>
+      <find>image</find>
+      <find>outpu</find>
+      <find>$players</find>
       <find>Vous n'</find>
-      <find>$currentStory</find>
+      <find>Vous n'êtes plus que deux joueurs, vous</find>
+      <find>choice</find>
+      <find>print</find>
+      <find>$outputInterface</find>
+      <find>outputInterface</find>
+      <find>printGame</find>
+      <find>??</find>
+      <find>new App</find>
     </findStrings>
     <replaceStrings>
       <replace>$this-&gt;pdo</replace>
@@ -200,25 +239,29 @@
         <option value="$PROJECT_DIR$/app.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e7ca42f4-0866-4397-ae10-94b7b2baf7a9/console.sql" />
         <option value="$PROJECT_DIR$/src/Commands/EndGameCommand.php" />
-        <option value="$PROJECT_DIR$/src/Player.php" />
         <option value="$PROJECT_DIR$/src/GameException.php" />
         <option value="$PROJECT_DIR$/src/Commands/JoinGameCommand.php" />
-        <option value="$PROJECT_DIR$/src/Kernel.php" />
         <option value="$PROJECT_DIR$/src/Commands/StartGameCommand.php" />
-        <option value="$PROJECT_DIR$/src/Game.php" />
         <option value="$PROJECT_DIR$/resources/story_content.php" />
-        <option value="$PROJECT_DIR$/src/Fetcher.php" />
         <option value="$PROJECT_DIR$/src/Commands/ActionCommand.php" />
         <option value="$PROJECT_DIR$/src/Commands/PremierChoixCommand.php" />
         <option value="$PROJECT_DIR$/src/Commands/SecondChoixCommand.php" />
         <option value="$PROJECT_DIR$/src/Commands/DeuxiemeChoixCommand.php" />
-        <option value="$PROJECT_DIR$/src/App.php" />
-        <option value="$PROJECT_DIR$/config.php" />
         <option value="$PROJECT_DIR$/init_web_hook.php" />
-        <option value="$PROJECT_DIR$/web_hook.php" />
         <option value="$PROJECT_DIR$/unset_web_hook.php" />
         <option value="$PROJECT_DIR$/src/Commands/KickCommand.php" />
         <option value="$PROJECT_DIR$/src/Commands/VisionCommand.php" />
+        <option value="$PROJECT_DIR$/web_hook.php" />
+        <option value="$PROJECT_DIR$/src/Player.php" />
+        <option value="$PROJECT_DIR$/src/Kernel.php" />
+        <option value="$PROJECT_DIR$/src/Game.php" />
+        <option value="$PROJECT_DIR$/config.php" />
+        <option value="$PROJECT_DIR$/src/TelegramOutput.php" />
+        <option value="$PROJECT_DIR$/src/BufferOutput.php" />
+        <option value="$PROJECT_DIR$/debug_interface.php" />
+        <option value="$PROJECT_DIR$/src/App.php" />
+        <option value="$PROJECT_DIR$/src/Fetcher.php" />
+        <option value="$PROJECT_DIR$/handle_telegram_updates.php" />
       </list>
     </option>
   </component>
@@ -295,7 +338,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -303,26 +346,31 @@
               <item name="youarenotalone" type="b2602c69:ProjectViewProjectNode" />
               <item name="youarenotalone" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="youarenotalone" type="b2602c69:ProjectViewProjectNode" />
+              <item name="youarenotalone" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="vis&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/VisionCommand.php&#10;kick&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/KickCommand.php&#10;vision&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/VisionCommand.php&#10;web_&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/web_hook.php&#10;conf&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/config.php&#10;app&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/App.php&#10;ac&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/ActionCommand.php&#10;nexttu&#9;null&#9;null&#10;ker&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Kernel.php&#10;nextt&#9;null&#9;null&#10;actionc&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/ActionCommand.php&#10;action&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/ActionCommand.php&#10;nexttur&#9;null&#9;null&#10;conten&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/resources/story_content.php&#10;start&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;visionc&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/VisionCommand.php&#10;startgame&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;startGa&#9;null&#9;null&#10;game&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Game.php&#10;config&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/config.php&#10;joinga&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/JoinGameCommand.php&#10;joing&#9;null&#9;null&#10;startga&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;playe&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Player.php&#10;joingam&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/JoinGameCommand.php&#10;fetcher&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Fetcher.php&#10;fetch&#9;null&#9;null&#10;join&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/JoinGameCommand.php&#10;fet&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Fetcher.php&#10;startgam&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;endgamec&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/EndGameCommand.php&#10;startg&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;Game&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Game.php&#10;App&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/App.php&#10;fetc&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Fetcher.php&#10;endgame&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/EndGameCommand.php&#10;player&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Player.php&#10;newtu&#9;null&#9;null&#10;story&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/resources/story_content.php&#10;st&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/resources/story_content.php&#10;visionco&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/VisionCommand.php&#10;newtur&#9;null&#9;null&#10;ki&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/KickCommand.php&#10;play&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Player.php&#10;fe&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Fetcher.php&#10;star&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;leav&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/LeaveGameCommand.php&#10;lea&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/LeaveGameCommand.php&#10;leave&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/LeaveGameCommand.php&#10;Actionc&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/ActionCommand.php" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="SearchEverywhereHistoryKey" value="startg&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;fetcher&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Fetcher.php&#10;kernel:80&#9;null&#9;null&#10;debug&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/debug_interface.php&#10;de&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/debug_interface.php&#10;app&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/App.php&#10;283&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/.idea/dataSources/e7ca42f4-0866-4397-ae10-94b7b2baf7a9.xml&#10;choix&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/PremierChoixCommand.php&#10;deu&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/DeuxiemeChoixCommand.php&#10;prem&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/PremierChoixCommand.php&#10;choic&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/PremierChoixCommand.php&#10;deb&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/debug_interface.php&#10;conf&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/config.php&#10;startgam&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;fet&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Fetcher.php&#10;player&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Player.php&#10;debin&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/debug_interface.php&#10;debugin&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/debug_interface.php&#10;join&#9;null&#9;null&#10;Game&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Game.php&#10;nextt&#9;null&#9;null&#10;vis&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/VisionCommand.php&#10;kick&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/KickCommand.php&#10;vision&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/VisionCommand.php&#10;web_&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/web_hook.php&#10;ac&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/ActionCommand.php&#10;nexttu&#9;null&#9;null&#10;ker&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Kernel.php&#10;actionc&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/ActionCommand.php&#10;action&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/ActionCommand.php&#10;nexttur&#9;null&#9;null&#10;conten&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/resources/story_content.php&#10;start&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;visionc&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/VisionCommand.php&#10;startgame&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;startGa&#9;null&#9;null&#10;game&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Game.php&#10;config&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/config.php&#10;joinga&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/JoinGameCommand.php&#10;joing&#9;null&#9;null&#10;startga&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/StartGameCommand.php&#10;playe&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Player.php&#10;joingam&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/JoinGameCommand.php&#10;fetch&#9;null&#9;null&#10;endgamec&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/EndGameCommand.php&#10;App&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/App.php&#10;fetc&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Fetcher.php&#10;endgame&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/src/Commands/EndGameCommand.php&#10;newtu&#9;null&#9;null&#10;story&#9;FILE&#9;file:///Users/seb/Projects/youarenotalone/resources/story_content.php" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/Commands" />
       <recent name="$PROJECT_DIR$/resources" />
-      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/Commands/SystemCommands" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -374,28 +422,36 @@
       <workItem from="1523994691959" duration="1445000" />
       <workItem from="1524040042424" duration="436000" />
       <workItem from="1524055616191" duration="1116000" />
-      <workItem from="1524228213117" duration="1775000" />
+      <workItem from="1524228213117" duration="3025000" />
+      <workItem from="1524486819003" duration="2325000" />
+      <workItem from="1524560448920" duration="4000" />
+      <workItem from="1524590765805" duration="10562000" />
+      <workItem from="1524603817662" duration="5292000" />
+      <workItem from="1524728014806" duration="2253000" />
+      <workItem from="1524754120911" duration="879000" />
+      <workItem from="1524909604525" duration="514000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91271000" />
+    <option name="totallyTimeSpent" value="114350000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1680" height="1028" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16971917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18253969" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15506716" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12148962" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -403,7 +459,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41527197" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -415,71 +470,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Fetcher.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="28" lean-forward="false" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-          <folding>
-            <marker date="1523994190888" expanded="true" signature="276:303" ph="SELECT * FRO... games" />
-            <marker date="1523994190888" expanded="true" signature="1226:1426" ph="SELECT game_... game_participants" />
-            <marker date="1523994190888" expanded="true" signature="1690:2008" ph="SELECT game_... games" />
-            <marker date="1523994190888" expanded="true" signature="2346:2426" ph="SELECT * FRO... game_participants" />
-            <marker date="1523994190888" expanded="true" signature="3055:3134" ph="UPDATE game_participants... " />
-            <marker date="1523994190888" expanded="true" signature="3226:3308" ph="UPDATE game_participants... " />
-            <marker date="1523994190888" expanded="true" signature="3550:3626" ph="UPDATE game_participants... " />
-            <marker date="1523994190888" expanded="true" signature="4027:4103" ph="INSERT INTO game_participants... " />
-            <marker date="1523994190888" expanded="true" signature="4355:4414" ph="DELETE FROM game_participants... " />
-            <marker date="1523994190888" expanded="true" signature="4728:4821" ph="UPDATE game_participants... " />
-            <marker date="1523994190888" expanded="true" signature="5112:5175" ph="UPDATE games... " />
-            <marker date="1523994190888" expanded="true" signature="5383:5472" ph="UPDATE games... " />
-            <marker date="1523994190888" expanded="true" signature="5383:5480" ph="UPDATE games... " />
-            <marker date="1523994190888" expanded="true" signature="5805:6065" ph="SELECT games... games" />
-            <marker date="1523994190888" expanded="true" signature="6392:6580" ph="SELECT games... games" />
-            <marker date="1523994190888" expanded="true" signature="6809:6854" ph="INSERT INTO games... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Commands/SystemCommands/GenericMessageCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/longman/telegram-bot/src/Commands/SystemCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="24" column="20" lean-forward="false" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/longman/telegram-bot/src/Commands/SystemCommands/ChannelpostCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="44" column="23" lean-forward="false" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/SPL/SPL.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="61" column="6" lean-forward="false" selection-start-line="61" selection-start-column="6" selection-end-line="61" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/PDO/PDO.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -599,13 +594,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="15" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e7ca42f4-0866-4397-ae10-94b7b2baf7a9/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -627,13 +615,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Player.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Commands/EndGameCommand.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
@@ -648,20 +629,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Commands/JoinGameCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="40" lean-forward="false" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://src:table:/9b1ffb9d/e7ca42f4-0866-4397-ae10-94b7b2baf7a9/youarenotalone.game_participants">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -669,39 +636,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Commands/StartGameCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="36" column="33" lean-forward="false" selection-start-line="34" selection-start-column="8" selection-end-line="36" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/story_content2php" />
-    <entry file="file://$PROJECT_DIR$/src/Fetcher.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2160">
-          <caret line="120" column="9" lean-forward="true" selection-start-line="120" selection-start-column="9" selection-end-line="120" selection-end-column="9" />
-          <folding>
-            <marker date="1523994190888" expanded="true" signature="276:303" ph="SELECT * FRO... games" />
-            <marker date="1523994190888" expanded="true" signature="1226:1426" ph="SELECT game_... game_participants" />
-            <marker date="1523994190888" expanded="true" signature="1690:2008" ph="SELECT game_... games" />
-            <marker date="1523994190888" expanded="true" signature="2346:2426" ph="SELECT * FRO... game_participants" />
-            <marker date="1523994190888" expanded="true" signature="3055:3134" ph="UPDATE game_participants... " />
-            <marker date="1523994190888" expanded="true" signature="3226:3308" ph="UPDATE game_participants... " />
-            <marker date="1523994190888" expanded="true" signature="3550:3626" ph="UPDATE game_participants... " />
-            <marker date="1523994190888" expanded="true" signature="4027:4103" ph="INSERT INTO game_participants... " />
-            <marker date="1523994190888" expanded="true" signature="4355:4414" ph="DELETE FROM game_participants... " />
-            <marker date="1523994190888" expanded="true" signature="4728:4821" ph="UPDATE game_participants... " />
-            <marker date="1523994190888" expanded="true" signature="5112:5175" ph="UPDATE games... " />
-            <marker date="1523994190888" expanded="true" signature="5383:5472" ph="UPDATE games... " />
-            <marker date="1523994190888" expanded="true" signature="5383:5480" ph="UPDATE games... " />
-            <marker date="1523994190888" expanded="true" signature="5805:6065" ph="SELECT games... games" />
-            <marker date="1523994190888" expanded="true" signature="6392:6580" ph="SELECT games... games" />
-            <marker date="1523994190888" expanded="true" signature="6809:6854" ph="INSERT INTO games... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/story_content.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -716,18 +651,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Commands/PremierChoixCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="34" column="24" lean-forward="false" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+    <entry file="das://table:/9b1ffb9d/e7ca42f4-0866-4397-ae10-94b7b2baf7a9/youarenotalone.game_participants">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Commands/DeuxiemeChoixCommand.php">
+    <entry file="file://$PROJECT_DIR$/src/Commands/KickCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="540">
+          <caret line="32" column="16" lean-forward="false" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/story_content2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -738,14 +679,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/9b1ffb9d/e7ca42f4-0866-4397-ae10-94b7b2baf7a9/youarenotalone.game_participants">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/unset_web_hook.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/story_content2.php">
+    <entry file="file://$PROJECT_DIR$/web_hook.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Commands/VisionCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="64" column="26" lean-forward="true" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Commands/JoinGameCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_0.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="301" column="9" lean-forward="false" selection-start-line="301" selection-start-column="9" selection-end-line="301" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Commands/DeuxiemeChoixCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Player.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="35" lean-forward="false" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_4.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="193" column="14" lean-forward="false" selection-start-line="193" selection-start-column="14" selection-end-line="193" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/dataSources/e7ca42f4-0866-4397-ae10-94b7b2baf7a9.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -753,21 +753,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.php">
+    <entry file="file://$PROJECT_DIR$/src/Game.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2718">
-          <caret line="155" column="59" lean-forward="false" selection-start-line="155" selection-start-column="59" selection-end-line="155" selection-end-column="59" />
-          <folding>
-            <element signature="e#23#85#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="252">
+          <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.php">
+    <entry file="file://$PROJECT_DIR$/src/Commands/PremierChoixCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="2" lean-forward="false" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+        <state relative-caret-position="306">
+          <caret line="19" column="83" lean-forward="false" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="83" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/debug_interface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="42" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BufferOutput.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="25" lean-forward="false" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TelegramOutput.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="44" lean-forward="true" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Commands/StartGameCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="721">
+          <caret line="66" column="29" lean-forward="false" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Fetcher.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="237" column="7" lean-forward="true" selection-start-line="237" selection-start-column="7" selection-end-line="237" selection-end-column="7" />
+          <folding>
+            <marker date="1524910132640" expanded="true" signature="1224:1542" ph="SELECT game_... games" />
+            <marker date="1524910132640" expanded="true" signature="1880:1960" ph="SELECT * FRO... game_participants" />
+            <marker date="1524910132640" expanded="true" signature="2589:2668" ph="UPDATE game_participants... " />
+            <marker date="1524910132640" expanded="true" signature="2795:2877" ph="UPDATE game_participants... " />
+            <marker date="1524910132640" expanded="true" signature="3128:3204" ph="UPDATE game_participants... " />
+            <marker date="1524910132640" expanded="true" signature="3605:3681" ph="INSERT INTO game_participants... " />
+            <marker date="1524910132640" expanded="true" signature="3933:3992" ph="DELETE FROM game_participants... " />
+            <marker date="1524910132640" expanded="true" signature="4306:4399" ph="UPDATE game_participants... " />
+            <marker date="1524910132640" expanded="true" signature="4690:4753" ph="UPDATE games... " />
+            <marker date="1524910132640" expanded="true" signature="4962:5059" ph="UPDATE games... " />
+            <marker date="1524910132640" expanded="true" signature="5384:5644" ph="SELECT games... games" />
+            <marker date="1524910132640" expanded="true" signature="5971:6159" ph="SELECT games... games" />
+            <marker date="1524910132640" expanded="true" signature="6388:6433" ph="INSERT INTO games... " />
+            <marker date="1524910132640" expanded="true" signature="6861:6945" ph="INSERT INTO game_participants... " />
+            <marker date="1524910132640" expanded="true" signature="7347:7424" ph="UPDATE game_participants... " />
+            <marker date="1524910132640" expanded="true" signature="7347:7434" ph="UPDATE game_participants... " />
+            <marker date="1524910132640" expanded="true" signature="7703:7844" ph="SELECT game_... game_participants" />
+            <marker date="1524910132640" expanded="true" signature="7703:7970" ph="SELECT game_... game_participants" />
+            <marker date="1524910132640" expanded="true" signature="8246:8473" ph="SELECT game_... game_participants" />
+            <marker date="1524910132640" expanded="true" signature="8762:9014" ph="SELECT game_... game_participants" />
+            <marker date="1524910132640" expanded="true" signature="9384:9560" ph="SELECT games... games" />
+            <marker date="1524910132640" expanded="true" signature="9384:9567" ph="SELECT games... games" />
+            <marker date="1524910132640" expanded="true" signature="9829:9986" ph="SELECT games... games" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -779,42 +841,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="26" column="73" lean-forward="false" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="73" />
+          <folding>
+            <element signature="e#23#85#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+        <state relative-caret-position="378">
+          <caret line="23" column="41" lean-forward="false" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web_hook.php">
+    <entry file="file://$PROJECT_DIR$/handle_telegram_updates.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unset_web_hook.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Commands/KickCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="32" column="16" lean-forward="false" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Commands/VisionCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="38" column="34" lean-forward="true" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+        <state relative-caret-position="198">
+          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
           <folding />
         </state>
       </provider>

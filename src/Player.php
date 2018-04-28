@@ -5,6 +5,7 @@ namespace App;
 class Player
 {
     public $participant_id;
+    public $player_name;
     public $user_id;
     public $first_name;
     public $last_name;
@@ -16,10 +17,14 @@ class Player
 
     public function getDisplayName()
     {
-        if ($this->username)
-        {
-            return $this->username;// . ($this->is_dead ? ' ☠️' : '');
+        if ($this->player_name) {
+            return $this->player_name;
         }
+
+        if ($this->username) {
+            return $this->username;
+        }
+
         return $this->first_name;
     }
 }

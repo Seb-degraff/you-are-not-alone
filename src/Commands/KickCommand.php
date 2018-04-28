@@ -45,7 +45,7 @@ class KickCommand extends UserCommand
 
         $app = new App($message);
 
-        $players = $app->fetcher->getAllPlayers();
+        $players = $app->fetcher->findAllPlayers();
 
         $text = "je n'ai pas compris";
 

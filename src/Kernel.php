@@ -21,7 +21,7 @@ class Kernel
 
     public $config;
 
-    public function __construct(array $config, $isWebHook)
+    public function __construct(array $config)
     {
         static::$instance = $this;
 
@@ -43,24 +43,14 @@ class Kernel
             $this->telegram->addCommandsPath(__DIR__ . "/Commands/SystemCommands/");
             $this->telegram->addCommandsPath(__DIR__ . "/Commands/");
 
-            if ($isWebHook) {
-                // Web hook
-                //Request::sendMessage(['chat_id' => '350906840', 'text' => 'Ça marche'] );
-                $this->telegram->handle();
-            }
-            else {
-                // Handle telegram getUpdates request
-                $this->telegram->handleGetUpdates();
-            }
-
             //$messages = $response->getRawData()['result'];
         } catch (TelegramException $e) {
             // log telegram errors
-            echo $e->getMessage();
+            die ($e->getMessage());
         }
     }
 
-    private function initDb($mysql_credentials)
+    public function initDb($mysql_credentials)
     {
         $dsn     = 'mysql:host=' . $mysql_credentials['host'] . ';dbname=' . $mysql_credentials['database'];
 
@@ -72,5 +62,28 @@ class Kernel
         $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_WARNING);
 
         return $pdo;
+    }
+
+    public function doTelegramWebHook()
+    {
+        //Request::sendMessage(['chat_id' => '350906840', 'text' => 'Ça marche'] );
+        try {
+            // Web hook
+            $this->telegram->handle();
+        } catch (TelegramException $e) {
+            // log telegram errors
+            die ($e->getMessage());
+        }
+    }
+
+    public function doTelegramUpdates()
+    {
+        try {
+            // Handle telegram getUpdates request
+            $this->telegram->handleGetUpdates();
+        } catch (TelegramException $e) {
+            // log telegram errors
+            die ($e->getMessage());
+        }
     }
 }
