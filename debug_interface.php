@@ -8,7 +8,7 @@ $kernel = new \App\Kernel($config);
 
 $outputInterface = new \App\BufferOutput();
 
-$app = new \App\App(null, $outputInterface);
+$app = new \App\App($outputInterface);
 
 switch ($_POST['action'] ?? '') {
     case 'add_player':

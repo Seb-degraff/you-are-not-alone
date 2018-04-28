@@ -2,6 +2,7 @@
 
 namespace Longman\TelegramBot\Commands\UserCommands;
 use App\App;
+use App\TelegramOutput;
 use Longman\TelegramBot\Commands\UserCommand;
 use Longman\TelegramBot\Request;
 
@@ -36,9 +37,17 @@ class EndGameCommand extends UserCommand
     {
         $message = $this->getMessage();
 
-        $app = new App($message);
+        $out = new TelegramOutput();
+        $app = new App($out);
 
-        $app->printGameChat("le jeu à été stoppé");
-        $app->endGame();
+        $chatId = $message->getChat()->getId();
+
+        if (!$app->checkIsGroupChat($chatId)) {
+            return;
+        }
+
+        $game = $app->fetcher->findGameByGroupChatId($chatId);
+
+        $app->endGame($game);
     }
 }

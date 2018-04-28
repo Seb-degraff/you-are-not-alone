@@ -3,6 +3,7 @@
 namespace Longman\TelegramBot\Commands\UserCommands;
 use App\App;
 use App\Kernel;
+use App\TelegramOutput;
 use Longman\TelegramBot\Commands\UserCommand;
 use Longman\TelegramBot\Request;
 
@@ -14,12 +15,25 @@ class JoinGameCommand extends UserCommand
     {
         $message = $this->getMessage();
 
-        $app = new App($message);
+        $telegramUserId = $message->getFrom()->getId();
+        $chatId = $message->getChat()->getId();
 
-        if (!$app->checkIsInGroupChat()) return;
+        $telegramOutput = new TelegramOutput();
+        $app = new App($telegramOutput);
 
+        if (!$app->checkIsGroupChat($chatId)) return;
 //        if (!$app->checkHasGame()) return;
 
-        if (!$app->joinGame($app->game, $message->getFrom()->getId())) return;
+        $player = $app->getOrCreatePlayer($telegramUserId);
+
+        $game = $app->fetcher->findGameByGroupChatId($chatId);
+
+        if (!$game) {
+            $game = $app->fetcher->createGame($chatId);
+        }
+
+        $app->joinGame($game, $player);
+
+        //if (!$app->joinGame($app->game, $message->getFrom()->getId())) return;
     }
 }

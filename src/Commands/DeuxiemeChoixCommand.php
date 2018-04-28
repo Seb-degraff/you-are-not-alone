@@ -2,6 +2,7 @@
 
 namespace Longman\TelegramBot\Commands\UserCommands;
 use App\App;
+use App\TelegramOutput;
 use Longman\TelegramBot\Commands\UserCommand;
 use Longman\TelegramBot\Request;
 
@@ -12,24 +13,24 @@ class DeuxiemeChoixCommand extends UserCommand
     {
         $message = $this->getMessage();
 
-        $app = new App($message);
+        $out = new TelegramOutput();
+        $app = new App($out);
 
         $chat_id = $message->getChat()->getId();
 
-        if (!$app->checkGameIsStarted()) {
-            $app->printChat($chat_id, "Le jeu n'a pas encore commencé. (/startGame)");
+        $player = $app->getOrCreatePlayer($message->getFrom()->getId());
+        $game = $app->fetcher->getCurrentGameForPlayer($player);
+
+        if (!$app->checkGameIsStarted($game)) {
             return;
         }
 
-        $currentPlayer = $app->player;
-
-        if (!$currentPlayer) {
-            $app->printChat($chat_id, "Vous ne faites pas partie du jeu pour le moment.");
+        if (!$app->checkPlayerIsInGame($player, $game)) {
             return;
         }
+
+        $app->choose($player, 0);
 
         $app->printChat($chat_id, "Très bien...");
-
-        $app->choose(0);
     }
 }

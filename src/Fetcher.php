@@ -26,7 +26,7 @@ class Fetcher
      * @param int $id
      * @return Player|null
      */
-    public function getPlayerByTelegramId($id)
+    public function findPlayerByTelegramId($id)
     {
         $players = $this->findAllPlayers();
 
@@ -59,23 +59,6 @@ class Fetcher
 
         return null;
     }
-
-
-
-    /**
-     * @return Player[]
-     */
-    public function getAllPlayersFromGame(Game $game)
-    {
-        $sql = "SELECT game_participants.id as participant_id, user_id, first_name, last_name, user.username, action_chosen, has_done_vision, is_dead FROM games JOIN chat ON games.chat_id = chat.id JOIN game_participants ON game_participants.game_id = games.id JOIN user ON game_participants.user_id = user.id WHERE game_id = :game_id";
-        $statement = $this->pdo->prepare($sql);
-        $statement->setFetchMode(\PDO::FETCH_CLASS, Player::class);
-        $statement->execute([':game_id' => $game->id]);
-        $players = $statement->fetchAll();
-
-        return $players;
-    }
-
 
     public function getAllPlayersData()
     {
@@ -127,14 +110,14 @@ class Fetcher
      */
     public function addGameParticipant(Game $game, $user_id)
     {
-        $player = $this->getPlayerByTelegramId($user_id);
+        $player = $this->findPlayerByTelegramId($user_id);
         if ($player != null)
             $this->removeGameParticipant($player);
 
         $statement = $this->pdo->prepare("INSERT INTO game_participants (game_id, user_id) VALUES (:game_id, :user_id)");
         $statement->execute([':game_id' => $game->id, 'user_id' => $user_id]);
 
-        return $this->getPlayerByTelegramId($user_id);
+        return $this->findPlayerByTelegramId($user_id);
     }
 
     public function removeGameParticipant(Player $player)
@@ -194,7 +177,7 @@ class Fetcher
      * @param int group chat id
      * @return Game
      */
-    public function getGameFromGroupChatId($chatId)
+    public function findGameByGroupChatId($chatId)
     {
         $statement = $this->pdo->prepare("SELECT games.id, games.damned_one_participant_id, games.current_turn, games.chat_id, chat.title as chat_title FROM games JOIN chat ON games.chat_id = chat.id WHERE games.chat_id = :chat_id");
         $statement->execute(['chat_id' => $chatId]);
@@ -208,7 +191,7 @@ class Fetcher
         $statement = $this->pdo->prepare("INSERT INTO games (chat_id) VALUES (:chat_id)");
         $statement->execute([':chat_id' => $chatId]);
 
-        return $this->getGameFromGroupChatId($chatId);
+        return $this->findGameByGroupChatId($chatId);
     }
 
     /**

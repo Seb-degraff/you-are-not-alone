@@ -3,6 +3,7 @@
 namespace App;
 
 use Longman\TelegramBot\Commands\UserCommands\JoinGameCommand;
+use Longman\TelegramBot\Commands\UserCommands\StartGameCommand;
 use Longman\TelegramBot\Entities\Message;
 use Longman\TelegramBot\Exception\TelegramException;
 use Longman\TelegramBot\Request;
@@ -24,53 +25,48 @@ class App
 
     public $outputInterface;
 
-    public function __construct(Message $message = null, $outputInterface)
+    public function __construct($outputInterface)
     {
         $this->storyContent = include (__DIR__ . "/../resources/story_content2.php");
         $this->outputInterface = $outputInterface;
 
         $this->fetcher = new Fetcher(Kernel::$instance->pdo);
 
-        if ($message === null) {
-            return;
-        }
-
-        $this->chat = $message->getChat();
-        $this->sender = $message->getFrom();
-        $this->player = $this->fetcher->getPlayerByTelegramId($this->sender->getId());
-
-        if ($this->player != null)
-            print ("I'm talking with " . $this->player->getDisplayName() . PHP_EOL);
-        else
-            print ("no current player" . PHP_EOL);
-
-
-        // NOTE: Not sure about the logic below, we're mixing chat game and player game which has the potential to be confusing
-        if ($this->chat->getId() < 0) {
-            // group chat -> find an existing game in this group or create one
-            $game = $this->fetcher->getGameFromGroupChatId($this->chat->getId());
-            if ($game == null) {
-                $game = $this->fetcher->createGame($this->chat->getId());
-            }
-            $this->game = $game;
-        } else {
-            // personal conversation -> take the game the player is in
-            if ($this->player != null) {
-                $this->game = $this->fetcher->getCurrentGameForPlayer($this->player);
-            }
-        }
-
-        if ($this->game != null)
-            print ("the current game has the id " . $this->game->id . " and is linked to the channel \"{$this->game->chat_title}\", id {$this->game->chat_id}" .  PHP_EOL);
-        else
-            print ("no current game" . PHP_EOL);
+//        $this->chat = $message->getChat();
+//        $this->sender = $message->getFrom();
+//        $this->player = $this->fetcher->getPlayerByTelegramId($this->sender->getId());
+//
+//        if ($this->player != null)
+//            print ("I'm talking with " . $this->player->getDisplayName() . PHP_EOL);
+//        else
+//            print ("no current player" . PHP_EOL);
+//
+//
+//        // NOTE: Not sure about the logic below, we're mixing chat game and player game which has the potential to be confusing
+//        if ($this->chat->getId() < 0) {
+//            // group chat -> find an existing game in this group or create one
+//            $game = $this->fetcher->findGameByGroupChatId($this->chat->getId());
+//            if ($game == null) {
+//                $game = $this->fetcher->createGame($this->chat->getId());
+//            }
+//            $this->game = $game;
+//        } else {
+//            // personal conversation -> take the game the player is in
+//            if ($this->player != null) {
+//                $this->game = $this->fetcher->getCurrentGameForPlayer($this->player);
+//            }
+//        }
+//
+//        if ($this->game != null)
+//            print ("the current game has the id " . $this->game->id . " and is linked to the channel \"{$this->game->chat_title}\", id {$this->game->chat_id}" .  PHP_EOL);
+//        else
+//            print ("no current game" . PHP_EOL);
     }
 
-    public function checkIsInGroupChat()
+    public function checkIsGroupChat(int $chatId)
     {
-        print $this->chat->getId();
-        if ($this->chat->getId() > 0) {
-            $this->printChat($this->chat->id, "Vous ne pouvez pas executer cette commande dans un message privé");
+        if ($chatId > 0) {
+            $this->printChat($chatId, "Vous ne pouvez pas executer cette commande dans un message privé");
             return false;
         } else {
             return true;
@@ -102,12 +98,12 @@ class App
      */
     public function getAllPlayersInCurrentGame()
     {
-        return $this->fetcher->getAllPlayersFromGame($this->game);
+        return $this->fetcher->findAllPlayersInGame($this->game);
     }
 
     public function nextTurn(Game $game)
     {
-        $players = $this->fetcher->getAllPlayersFromGame($game);
+        $players = $this->fetcher->findAllPlayersInGame($game);
         $notDeadPlayers = $this->getNotDeadPlayers($players);
 
         if (count($notDeadPlayers) == 0) {
@@ -155,6 +151,7 @@ class App
 
         // reset player state
         foreach ($players as $player) {
+            echo "resetting player " . $player->getDisplayName() . "!";
             $this->fetcher->playerSetActionChosen($player, null);
             $this->fetcher->playerSetHasDoneVision($player, false);
         }
@@ -226,7 +223,7 @@ class App
 //        }
     }
 
-    private function printPlayerChat(Player $player, $text, $markdown = false)
+    public function printPlayerChat(Player $player, $text, $markdown = false)
     {
         $this->outputInterface->printPlayerChat($player, $text, $markdown);
     }
@@ -269,9 +266,17 @@ class App
     /**
      * @return bool
      */
-    public function checkGameIsStarted()
+    public function checkGameIsStarted(Game $game, $chat_id = null)
     {
-        return $this->game->isStarted();
+        if ($chat_id == null) {
+            $chat_id = $game->chat_id;
+        }
+
+        if (!$game->isStarted()) {
+            $this->printChat($chat_id, "Le jeu n'a pas encore commencé. (" . StartGameCommand::NAME . ")");
+            return false;
+        }
+        return true;
     }
 
     public function getCurrentScenario(Game $game)
@@ -381,14 +386,33 @@ class App
     }
 
     // NEW BELOW:
-    public function newPlayer($name)
+    public function newPlayer($name = "", $telegramId = null)
     {
-        $this->fetcher->newPlayer($name);
+        return $this->fetcher->newPlayer($name, $telegramId);
+    }
+
+    public function getOrCreatePlayer(int $telegramId)
+    {
+        $player = $this->fetcher->findPlayerByTelegramId($telegramId);
+        if (!$player) {
+            $player = $this->newPlayer("", $telegramId);
+        }
+        return $player;
+    }
+
+    public function getOrCreateGame(int $chatId)
+    {
+        $game = $this->fetcher->findGameByGroupChatId($chatId);
+        if (!$game) {
+            $game = $this->fetcher->createGame($chatId);
+        }
+
+        return $game;
     }
 
     public function startGame(Game $game)
     {
-        $allPlayers = $this->fetcher->getAllPlayersFromGame($game);
+        $allPlayers = $this->fetcher->findAllPlayersInGame($game);
 
         if ($game->isStarted()) {
             $this->printGameChat($game, "Le jeu a déjà commencé. ( /endGame )");
@@ -408,5 +432,14 @@ class App
         }
 
         $this->nextTurn($game);
+    }
+
+    public function checkPlayerIsInGame(Player $player, Game $game)
+    {
+        if ($player->game_id != $game->id) {
+            $this->printGameChat($game, "Vous ne faites pas partie du jeu pour le moment.");
+            return false;
+        }
+        return true;
     }
 }

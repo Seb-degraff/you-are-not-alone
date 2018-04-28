@@ -2,6 +2,7 @@
 
 namespace Longman\TelegramBot\Commands\UserCommands;
 use App\App;
+use App\TelegramOutput;
 use Longman\TelegramBot\Commands\UserCommand;
 use Longman\TelegramBot\Request;
 
@@ -35,23 +36,29 @@ class LeaveGameCommand extends UserCommand
     public function execute()
     {
         $message = $this->getMessage();
-        $user = $message->getFrom();
 
-        $chat_id = $message->getChat()->getId();
+        $telegramUserId = $message->getFrom()->getId();
+        $chatId = $message->getChat()->getId();
 
-        $app = App::$instance;
+        $telegramOutput = new TelegramOutput();
+        $app = new App($telegramOutput);
 
-        $game = $app->fetcher->getCurrentGame();
+        if (!$app->checkIsGroupChat($chatId)) return;
+//        if (!$app->checkHasGame()) return;
 
-        $player = $app->fetcher->getPlayerByTelegramId($user->getId());
+        $player = $app->getOrCreatePlayer($telegramUserId);
 
-        if ($game != null) {
-            $app->printChat($chat_id, $player->getDisplayName() . ", tu ne va quand meme pas quitter en pleine partie?");
+        $game = $app->fetcher->findGameByGroupChatId($chatId);
+
+        if (!$game) {
+            $app->printChat($chatId, "?");
+        }
+
+        if ($game->current_turn != -1) {
+            $app->printChat($chatId, $player->getDisplayName() . ", tu ne va quand meme pas quitter en pleine partie?");
             return;
         }
 
-        $app->removePlayer($player);
-
-        $app->printChat($chat_id, $player->getDisplayName() . " a quitté la partie. Adieu 👋");
+        $app->leaveGame($player, $game);
     }
 }

@@ -5,6 +5,8 @@ namespace App;
 use Longman\TelegramBot\Exception\TelegramException;
 use Longman\TelegramBot\Request;
 use Longman\TelegramBot\Telegram;
+use Whoops\Handler\PrettyPageHandler;
+use Whoops\Run;
 
 class Kernel
 {
@@ -24,6 +26,12 @@ class Kernel
     public function __construct(array $config)
     {
         static::$instance = $this;
+
+        $whoops = new \Whoops\Run();
+        $errorHandler = new \Whoops\Handler\PrettyPageHandler();
+        $errorHandler->setEditor("phpstorm");
+        $whoops->pushHandler($errorHandler);
+        $whoops->register();
 
         $this->config = $config;
 
