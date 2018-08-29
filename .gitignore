@@ -7,3 +7,6 @@ composer.phar
 config.php.dist
 
 .idea/workspace.xml
+
+nginx.conf
+
