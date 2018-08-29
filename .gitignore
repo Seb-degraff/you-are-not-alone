@@ -9,4 +9,5 @@ config.php.dist
 .idea/workspace.xml
 
 nginx.conf
-
+config.php
+log/
